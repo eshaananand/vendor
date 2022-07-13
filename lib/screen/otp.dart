@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vendor_app/screen/auth.dart';
 
 class Otp extends StatefulWidget {
   const Otp({Key? key}) : super(key: key);
@@ -14,6 +15,28 @@ class _OtpState extends State<Otp> {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
+        bottomNavigationBar: Material(
+          color: Colors.red,
+          child: InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder:( context) => Auth()));
+            },
+            child: SizedBox(
+              height: kToolbarHeight,
+              width: double.infinity,
+              child: Center(
+                child: Text(
+                  'Continue',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
         body: Container(
           height: MediaQuery.of(context).size.height,
       width: double.infinity,
@@ -87,6 +110,7 @@ class _OtpState extends State<Otp> {
               padding: const EdgeInsets.only(top: 0,left: 20),
               child: Text("Valid till 20 sec",style: TextStyle(color: Colors.black,fontSize: 12),),
             ),
+
 
 
           ]

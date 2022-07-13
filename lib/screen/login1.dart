@@ -68,7 +68,8 @@ class LoginPage1 extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 40),
                     child: Column(
-                      // TODO: mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      //crossAxisAlignment: ,
                       children: <Widget>[
                         Text(
                           "Phone No.:",
