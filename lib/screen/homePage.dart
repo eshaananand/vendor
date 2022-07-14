@@ -20,6 +20,7 @@ class _homepageState extends State<homepage> {
       return MediaQuery.of(context).size.height * height;
     }
 
+    //h
     //Returns a double, width of the screen multipled by the width given
     //The width given should range between 0-1 (0 -> No width , 1 -> Full screen width)
     double w(double width) {
@@ -218,7 +219,7 @@ class _homepageState extends State<homepage> {
                           height: h(0.2),
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: AssetImage("assets/superSale.png"),
+                                image: AssetImage("assets/superSales.png"),
                                 fit: BoxFit.fill),
                           ),
                         ),
@@ -246,7 +247,7 @@ class _homepageState extends State<homepage> {
                                         decoration: BoxDecoration(
                                           image: DecorationImage(
                                             image: AssetImage(
-                                                "assets/vegetable1.png"),
+                                                "assets/vegetable.png"),
                                             fit: BoxFit.fill,
                                           ),
                                         ),
@@ -515,7 +516,7 @@ class _homepageState extends State<homepage> {
                         padding: const EdgeInsets.only(top: 10.0),
                         children: <Widget>[
                           trendingShop(
-                            imageUrl: "beststore1.png",
+                            imageUrl: "beststore.png",
                             storeName: "Tripathi Store",
                             storeType: "Vegetables & Fruits",
                           ),

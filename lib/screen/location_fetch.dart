@@ -15,6 +15,7 @@ class Location_fetch extends StatefulWidget {
 class _Location_fetchState extends State<Location_fetch> {
   @override
   Widget build(BuildContext context) {
+    //
     //Returns a double, height of the screen multipled by the height given
     //The height given should range between 0-1 (0 -> No height , 1 -> Full screen height)
     double h(double height) {
