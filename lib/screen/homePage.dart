@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:vendor_app/screen/vegetablesAndFruits.dart';
 
 class homepage extends StatefulWidget {
@@ -236,11 +237,13 @@ class _homepageState extends State<homepage> {
                           children: <Widget>[
                             InkWell(
                               onTap: () {
-                                Navigator.push(
+                                pushNewScreen(
                                   context,
-                                  MaterialPageRoute(
-                                    builder: (context) => vegetablesAndFruits(),
-                                  ),
+                                  screen: vegetablesAndFruits(),
+                                  withNavBar:
+                                      false, // OPTIONAL VALUE. True by default.
+                                  pageTransitionAnimation:
+                                      PageTransitionAnimation.cupertino,
                                 );
                               },
                               child: Container(

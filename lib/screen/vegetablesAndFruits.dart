@@ -292,7 +292,7 @@ class _vegetablesAndFruitsState extends State<vegetablesAndFruits> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 25.0),
+                      padding: EdgeInsets.only(top: 10.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -325,6 +325,7 @@ class _vegetablesAndFruitsState extends State<vegetablesAndFruits> {
                               crossAxisSpacing: 10,
                               mainAxisSpacing: 10,
                               crossAxisCount: 3,
+                              childAspectRatio: 5 / 6,
                               children: [
                                 storeGrid(
                                   image: "veges.png",
@@ -366,7 +367,7 @@ class _vegetablesAndFruitsState extends State<vegetablesAndFruits> {
                                 imageUrl: "veges.png",
                                 storeName: "Tripati",
                                 storeType: "Vegetables",
-                                rating: 3.5,
+                                rating: 4.5,
                                 distance: 10,
                                 time: 40,
                               ),

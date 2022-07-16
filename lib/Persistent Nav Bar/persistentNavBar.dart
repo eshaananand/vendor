@@ -16,10 +16,6 @@ class PersistentNavBar extends StatelessWidget {
 
     _controller = PersistentTabController(initialIndex: 0);
 
-    // pushNewScreen({required BuildContext context, required Widget screen}){
-
-    // }
-
     List<PersistentBottomNavBarItem> _navBarsItems() {
       return [
         PersistentBottomNavBarItem(
