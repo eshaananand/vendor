@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:vendor_app/screen/vegetablesAndFruits.dart';
 
 class homepage extends StatefulWidget {
   homepage({Key? key}) : super(key: key);
@@ -83,40 +84,40 @@ class _homepageState extends State<homepage> {
           FocusManager.instance.primaryFocus?.unfocus();
         },
         child: Scaffold(
-          bottomNavigationBar: SafeArea(
-            child: GNav(
-              gap: 10,
-              activeColor: Colors.white,
-              iconSize: 30,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-              duration: Duration(milliseconds: 400),
-              backgroundColor: Colors.red,
-              color: Colors.white,
-              tabs: [
-                GButton(
-                  icon: Icons.home_outlined,
-                  text: 'Home',
-                  onPressed: () {},
-                ),
-                GButton(
-                  icon: Icons.category,
-                  text: 'Category',
-                  onPressed: () {},
-                ),
-                GButton(
-                  icon: Icons.shopping_bag_outlined,
-                  text: 'Bag',
-                  onPressed: () {},
-                ),
-                GButton(
-                  icon: Icons.person_outlined,
-                  text: 'Profile',
-                  onPressed: () {},
-                ),
-              ],
-              selectedIndex: 1,
-            ),
-          ),
+          // bottomNavigationBar: SafeArea(
+          //   child: GNav(
+          //     gap: 10,
+          //     activeColor: Colors.white,
+          //     iconSize: 30,
+          //     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+          //     duration: Duration(milliseconds: 400),
+          //     backgroundColor: Colors.red,
+          //     color: Colors.white,
+          //     tabs: [
+          //       GButton(
+          //         icon: Icons.home_outlined,
+          //         text: 'Home',
+          //         onPressed: () {},
+          //       ),
+          //       GButton(
+          //         icon: Icons.category,
+          //         text: 'Category',
+          //         onPressed: () {},
+          //       ),
+          //       GButton(
+          //         icon: Icons.shopping_bag_outlined,
+          //         text: 'Bag',
+          //         onPressed: () {},
+          //       ),
+          //       GButton(
+          //         icon: Icons.person_outlined,
+          //         text: 'Profile',
+          //         onPressed: () {},
+          //       ),
+          //     ],
+          //     selectedIndex: 1,
+          //   ),
+          // ),
           body: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -234,7 +235,14 @@ class _homepageState extends State<homepage> {
                           crossAxisCount: 4,
                           children: <Widget>[
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => vegetablesAndFruits(),
+                                  ),
+                                );
+                              },
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),

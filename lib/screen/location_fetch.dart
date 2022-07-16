@@ -5,6 +5,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:vendor_app/screen/homePage.dart';
 
+import '../Persistent Nav Bar/persistentNavBar.dart';
+
 class Location_fetch extends StatefulWidget {
   const Location_fetch({Key? key}) : super(key: key);
 
@@ -46,8 +48,10 @@ class _Location_fetchState extends State<Location_fetch> {
             color: Colors.red,
             child: InkWell(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => homepage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PersistentNavBar()));
               },
               child: SizedBox(
                 height: kToolbarHeight,
