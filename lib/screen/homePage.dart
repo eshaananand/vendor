@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
-import 'package:vendor_app/screen/vegetablesAndFruits.dart';
+import 'package:vendor_app/screen/subCategories.dart';
+import 'package:vendor_app/screen/leafyVegetables.dart';
 
 class homepage extends StatefulWidget {
   homepage({Key? key}) : super(key: key);
@@ -22,7 +23,6 @@ class _homepageState extends State<homepage> {
       return MediaQuery.of(context).size.height * height;
     }
 
-    //h
     //Returns a double, width of the screen multipled by the width given
     //The width given should range between 0-1 (0 -> No width , 1 -> Full screen width)
     double w(double width) {
@@ -85,40 +85,6 @@ class _homepageState extends State<homepage> {
           FocusManager.instance.primaryFocus?.unfocus();
         },
         child: Scaffold(
-          // bottomNavigationBar: SafeArea(
-          //   child: GNav(
-          //     gap: 10,
-          //     activeColor: Colors.white,
-          //     iconSize: 30,
-          //     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-          //     duration: Duration(milliseconds: 400),
-          //     backgroundColor: Colors.red,
-          //     color: Colors.white,
-          //     tabs: [
-          //       GButton(
-          //         icon: Icons.home_outlined,
-          //         text: 'Home',
-          //         onPressed: () {},
-          //       ),
-          //       GButton(
-          //         icon: Icons.category,
-          //         text: 'Category',
-          //         onPressed: () {},
-          //       ),
-          //       GButton(
-          //         icon: Icons.shopping_bag_outlined,
-          //         text: 'Bag',
-          //         onPressed: () {},
-          //       ),
-          //       GButton(
-          //         icon: Icons.person_outlined,
-          //         text: 'Profile',
-          //         onPressed: () {},
-          //       ),
-          //     ],
-          //     selectedIndex: 1,
-          //   ),
-          // ),
           body: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -221,8 +187,9 @@ class _homepageState extends State<homepage> {
                           height: h(0.2),
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: AssetImage("assets/superSales.png"),
-                                fit: BoxFit.fill),
+                              image: AssetImage("assets/superSales.png"),
+                              fit: BoxFit.fill,
+                            ),
                           ),
                         ),
                       ),
@@ -239,9 +206,8 @@ class _homepageState extends State<homepage> {
                               onTap: () {
                                 pushNewScreen(
                                   context,
-                                  screen: vegetablesAndFruits(),
-                                  withNavBar:
-                                      false, // OPTIONAL VALUE. True by default.
+                                  screen: SubCategories(),
+                                  withNavBar: false,
                                   pageTransitionAnimation:
                                       PageTransitionAnimation.cupertino,
                                 );
@@ -289,7 +255,7 @@ class _homepageState extends State<homepage> {
                                         decoration: BoxDecoration(
                                           image: DecorationImage(
                                             image: AssetImage(
-                                                "assets/vegetable1.png"),
+                                                "assets/vegetable.png"),
                                             fit: BoxFit.fill,
                                           ),
                                         ),
@@ -320,7 +286,7 @@ class _homepageState extends State<homepage> {
                                         decoration: BoxDecoration(
                                           image: DecorationImage(
                                             image: AssetImage(
-                                                "assets/vegetable1.png"),
+                                                "assets/vegetable.png"),
                                             fit: BoxFit.fill,
                                           ),
                                         ),
@@ -351,7 +317,7 @@ class _homepageState extends State<homepage> {
                                         decoration: BoxDecoration(
                                           image: DecorationImage(
                                             image: AssetImage(
-                                                "assets/vegetable1.png"),
+                                                "assets/vegetable.png"),
                                             fit: BoxFit.fill,
                                           ),
                                         ),
@@ -382,7 +348,7 @@ class _homepageState extends State<homepage> {
                                         decoration: BoxDecoration(
                                           image: DecorationImage(
                                             image: AssetImage(
-                                                "assets/vegetable1.png"),
+                                                "assets/vegetable.png"),
                                             fit: BoxFit.fill,
                                           ),
                                         ),
@@ -413,7 +379,7 @@ class _homepageState extends State<homepage> {
                                         decoration: BoxDecoration(
                                           image: DecorationImage(
                                             image: AssetImage(
-                                                "assets/vegetable1.png"),
+                                                "assets/vegetable.png"),
                                             fit: BoxFit.fill,
                                           ),
                                         ),
@@ -444,7 +410,7 @@ class _homepageState extends State<homepage> {
                                         decoration: BoxDecoration(
                                           image: DecorationImage(
                                             image: AssetImage(
-                                                "assets/vegetable1.png"),
+                                                "assets/vegetable.png"),
                                             fit: BoxFit.fill,
                                           ),
                                         ),
@@ -475,7 +441,7 @@ class _homepageState extends State<homepage> {
                                         decoration: BoxDecoration(
                                           image: DecorationImage(
                                             image: AssetImage(
-                                                "assets/vegetable1.png"),
+                                                "assets/vegetable.png"),
                                             fit: BoxFit.fill,
                                           ),
                                         ),

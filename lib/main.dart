@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vendor_app/screen/itemsOfShop.dart';
 
 import 'package:vendor_app/screen/login1.dart';
 
@@ -27,8 +28,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
+      // home: ItemsOfShop(),
       home: LoginPage1(),
     );
   }
 }
-

@@ -77,7 +77,7 @@ class LoginPage1 extends StatelessWidget {
                         ),
                         TextFormField(
                           validator: (value) =>
-                          value!.isEmpty ? 'Enter your phone number' : null,
+                              value!.isEmpty ? 'Enter your phone number' : null,
                           style: TextStyle(color: Colors.black),
                           decoration: InputDecoration(
                               contentPadding: EdgeInsets.only(
@@ -100,30 +100,39 @@ class LoginPage1 extends StatelessWidget {
                         Center(
                           child: Row(
                             children: <Widget>[
-                              SizedBox(width: 90,),
+                              SizedBox(
+                                width: 90,
+                              ),
                               //Text("Have a ",style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.bold),),
                               RichText(
                                 text: TextSpan(
                                   text: 'Have a ',
-                                  style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.bold),
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold),
                                   children: <TextSpan>[
                                     TextSpan(
-                                        text: 'Refferal',
-                                        style: TextStyle(fontWeight: FontWeight.bold,color: Colors.red),
-                                    recognizer: TapGestureRecognizer()
-                                  ..onTap = () => Navigator.push(context, MaterialPageRoute(builder:( context) => LoginPage2())),
+                                      text: 'Refferal',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.red),
+                                      recognizer: TapGestureRecognizer()
+                                        ..onTap = () => Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    LoginPage2())),
                                     ),
                                     TextSpan(
-                                        text: ' Code ? ',
-                                        ),
+                                      text: ' Code ? ',
+                                    ),
                                   ],
                                 ),
                               )
-
                             ],
                           ),
                         )
-
                       ],
                     ),
                   ),
@@ -135,7 +144,8 @@ class LoginPage1 extends StatelessWidget {
                         height: 60,
                         minWidth: 150,
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder:( context) => Otp()));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Otp()));
                         },
                         color: Colors.red,
                         elevation: 5,
@@ -158,8 +168,8 @@ class LoginPage1 extends StatelessWidget {
                     height: 300,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage("assets/login in.png"),
-                        )),
+                      image: AssetImage("assets/login in.png"),
+                    )),
                   )
                 ],
               ),

@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
+import 'package:vendor_app/screen/categories.dart';
 import 'package:vendor_app/screen/homePage.dart';
 import 'package:vendor_app/screen/location_fetch.dart';
 import 'package:vendor_app/screen/login2.dart';
@@ -26,8 +27,8 @@ class PersistentNavBar extends StatelessWidget {
           inactiveColorPrimary: Colors.white,
         ),
         PersistentBottomNavBarItem(
-          icon: Icon(CupertinoIcons.settings),
-          title: ("Settings"),
+          icon: Icon(CupertinoIcons.square_grid_2x2),
+          title: ("Categories"),
           activeColorPrimary: Colors.red,
           activeColorSecondary: Colors.white,
           inactiveColorPrimary: Colors.white,
@@ -41,10 +42,11 @@ class PersistentNavBar extends StatelessWidget {
       controller: _controller,
       screens: [
         homepage(),
-        Location_fetch(),
+        Categories(),
       ],
       items: _navBarsItems(),
       navBarStyle: NavBarStyle.style9,
+      stateManagement: false,
     );
   }
 }
