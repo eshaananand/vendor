@@ -5,7 +5,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:vendor_app/screen/subCategories.dart';
-import 'package:vendor_app/screen/leafyVegetables.dart';
+import 'package:vendor_app/screen/shopDetails.dart';
 
 class homepage extends StatefulWidget {
   homepage({Key? key}) : super(key: key);

@@ -39,6 +39,7 @@ dependencies:
   flutter_svg: ^1.1.1+1
   persistent_bottom_nav_bar_v2: ^4.2.4
   auto_size_text: ^3.0.0
+  roundcheckbox: ^2.0.4+1
 
 dev_dependencies:
   flutter_test:

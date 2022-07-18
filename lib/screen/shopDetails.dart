@@ -3,17 +3,19 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
+import 'package:vendor_app/screen/itemsOfShop.dart';
 
-class LeafyVegetables extends StatefulWidget {
-  LeafyVegetables({Key? key}) : super(key: key);
+class ShopDetails extends StatefulWidget {
+  ShopDetails({Key? key}) : super(key: key);
 
   @override
-  State<LeafyVegetables> createState() => _LeafyVegetablesState();
+  State<ShopDetails> createState() => _ShopDetailsState();
 }
 
 TextEditingController searchController = TextEditingController();
 
-class _LeafyVegetablesState extends State<LeafyVegetables> {
+class _ShopDetailsState extends State<ShopDetails> {
   @override
   double h(double height) {
     return MediaQuery.of(context).size.height * height;
@@ -31,10 +33,13 @@ class _LeafyVegetablesState extends State<LeafyVegetables> {
   Widget build(BuildContext context) {
     //Creates widgets for GridView(if isGrid = true)
     Widget storeGrid(
-        {String image = "", String storeName = "", double rating = 0}) {
+        {String image = "",
+        String storeName = "",
+        double rating = 0,
+        GestureTapCallback? onTap}) {
       return IntrinsicHeight(
         child: InkWell(
-          onTap: () {},
+          onTap: onTap,
           child: Card(
             elevation: 5,
             shape: RoundedRectangleBorder(
@@ -47,17 +52,15 @@ class _LeafyVegetablesState extends State<LeafyVegetables> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Flexible(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(20),
-                      topLeft: Radius.circular(20),
-                    ),
-                    child: Image.asset(
-                      "assets/$image",
-                      width: w(1),
-                      fit: BoxFit.fill,
-                    ),
+                ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    topLeft: Radius.circular(20),
+                  ),
+                  child: Image.asset(
+                    "assets/$image",
+                    width: w(1),
+                    fit: BoxFit.fill,
                   ),
                 ),
                 AutoSizeText(
@@ -83,16 +86,16 @@ class _LeafyVegetablesState extends State<LeafyVegetables> {
     }
 
     //Create a widget for list view (isGrid = false)
-    Widget storesList({
-      String imageUrl = "",
-      String storeName = "",
-      String storeType = "",
-      double rating = 0,
-      double distance = 0.0,
-      int time = 0,
-    }) {
+    Widget storesList(
+        {String imageUrl = "",
+        String storeName = "",
+        String storeType = "",
+        double rating = 0,
+        double distance = 0.0,
+        int time = 0,
+        GestureTapCallback? onTap}) {
       return InkWell(
-        onTap: () {},
+        onTap: onTap,
         child: IntrinsicHeight(
           child: Container(
             decoration: BoxDecoration(
@@ -331,6 +334,15 @@ class _LeafyVegetablesState extends State<LeafyVegetables> {
                                     image: "veges.png",
                                     storeName: "Tripathi",
                                     rating: 3.5,
+                                    onTap: () {
+                                      pushNewScreen(
+                                        context,
+                                        screen: ItemsOfShop(),
+                                        withNavBar: false,
+                                        pageTransitionAnimation:
+                                            PageTransitionAnimation.cupertino,
+                                      );
+                                    },
                                   ),
                                   storeGrid(
                                     image: "veges.png",
@@ -357,11 +369,20 @@ class _LeafyVegetablesState extends State<LeafyVegetables> {
                               children: [
                                 storesList(
                                   imageUrl: "veges.png",
-                                  storeName: "Tripati",
+                                  storeName: "Tripatio",
                                   storeType: "Vegetables",
                                   rating: 3.5,
                                   distance: 10,
                                   time: 40,
+                                  onTap: () {
+                                    pushNewScreen(
+                                      context,
+                                      screen: ItemsOfShop(),
+                                      withNavBar: false,
+                                      pageTransitionAnimation:
+                                          PageTransitionAnimation.cupertino,
+                                    );
+                                  },
                                 ),
                                 storesList(
                                   imageUrl: "veges.png",

@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
-import 'package:vendor_app/screen/leafyVegetables.dart';
+import 'package:vendor_app/screen/shopDetails.dart';
 
 class SubCategories extends StatefulWidget {
   SubCategories({Key? key}) : super(key: key);
@@ -186,7 +186,7 @@ class _SubCategoriesState extends State<SubCategories> {
                               onTap: () {
                                 pushNewScreen(
                                   context,
-                                  screen: LeafyVegetables(),
+                                  screen: ShopDetails(),
                                   withNavBar:
                                       false, // OPTIONAL VALUE. True by default.
                                   pageTransitionAnimation:
@@ -201,7 +201,7 @@ class _SubCategoriesState extends State<SubCategories> {
                               onTap: () {
                                 pushNewScreen(
                                   context,
-                                  screen: LeafyVegetables(),
+                                  screen: ShopDetails(),
                                   withNavBar:
                                       false, // OPTIONAL VALUE. True by default.
                                   pageTransitionAnimation:
@@ -216,7 +216,7 @@ class _SubCategoriesState extends State<SubCategories> {
                               onTap: () {
                                 pushNewScreen(
                                   context,
-                                  screen: LeafyVegetables(),
+                                  screen: ShopDetails(),
                                   withNavBar:
                                       false, // OPTIONAL VALUE. True by default.
                                   pageTransitionAnimation:
@@ -231,7 +231,7 @@ class _SubCategoriesState extends State<SubCategories> {
                               onTap: () {
                                 pushNewScreen(
                                   context,
-                                  screen: LeafyVegetables(),
+                                  screen: ShopDetails(),
                                   withNavBar:
                                       false, // OPTIONAL VALUE. True by default.
                                   pageTransitionAnimation:
@@ -246,7 +246,7 @@ class _SubCategoriesState extends State<SubCategories> {
                               onTap: () {
                                 pushNewScreen(
                                   context,
-                                  screen: LeafyVegetables(),
+                                  screen: ShopDetails(),
                                   withNavBar:
                                       false, // OPTIONAL VALUE. True by default.
                                   pageTransitionAnimation:
