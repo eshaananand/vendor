@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
@@ -10,6 +12,10 @@ import 'package:vendor_app/screen/login2.dart';
 
 class PersistentNavBar extends StatelessWidget {
   const PersistentNavBar({Key? key}) : super(key: key);
+
+  double random(min, max) {
+    return min + Random().nextInt(max - min).toDouble();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +42,8 @@ class PersistentNavBar extends StatelessWidget {
       ];
     }
 
+    //ToDo
+    //When returning from category page to home page the changes in category remains same.
     return PersistentTabView(
       context,
       backgroundColor: Colors.red,
@@ -46,7 +54,7 @@ class PersistentNavBar extends StatelessWidget {
       ],
       items: _navBarsItems(),
       navBarStyle: NavBarStyle.style9,
-      stateManagement: false,
+      stateManagement: true,
     );
   }
 }

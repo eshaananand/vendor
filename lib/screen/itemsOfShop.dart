@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:checkbox_grouped/checkbox_grouped.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:roundcheckbox/roundcheckbox.dart';
 
 class ItemsOfShop extends StatefulWidget {
   ItemsOfShop({Key? key}) : super(key: key);
@@ -11,6 +11,7 @@ class ItemsOfShop extends StatefulWidget {
   State<ItemsOfShop> createState() => _ItemsOfShopState();
 }
 
+//To be handled bt API
 double totalPrice = 0;
 int totalItems = 0;
 
@@ -25,6 +26,8 @@ List<List<int>> itemCount = [
 ];
 
 List<String> tabName = ["Vegetables", "Fruits", "Herbs", "Mushroom"];
+List<int> selectedIndex = [-1, -1];
+List<int> indexPrice = [0, 0];
 
 class _ItemsOfShopState extends State<ItemsOfShop> {
   Widget items({
@@ -47,7 +50,6 @@ class _ItemsOfShopState extends State<ItemsOfShop> {
     double priceOf2kg = 0,
     double priceOf5kg = 0,
   }) {
-    int indexPrice = 0;
     return Container(
       height: MediaQuery.of(context).size.height * 0.12,
       width: MediaQuery.of(context).size.width,
@@ -77,7 +79,7 @@ class _ItemsOfShopState extends State<ItemsOfShop> {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                if (indexPrice == 0)
+                if (indexPrice[indexOfElement] == 0)
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -119,42 +121,205 @@ class _ItemsOfShopState extends State<ItemsOfShop> {
                                                 showModalBottomSheet(
                                                   context: context,
                                                   builder: (builder) {
-                                                    return Container(
-                                                      height:
-                                                          MediaQuery.of(context)
-                                                                  .size
-                                                                  .height *
-                                                              0.3,
-                                                      child: Column(
-                                                        children: [
-                                                          Row(
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceBetween,
+                                                    return StatefulBuilder(
+                                                        builder: (BuildContext
+                                                                context,
+                                                            StateSetter set) {
+                                                      return Container(
+                                                        height: MediaQuery.of(
+                                                                    context)
+                                                                .size
+                                                                .height *
+                                                            0.34,
+                                                        width: MediaQuery.of(
+                                                                context)
+                                                            .size
+                                                            .width,
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsets.only(
+                                                                  top: 60.0,
+                                                                  left: 20,
+                                                                  right: 20),
+                                                          child: Column(
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
-                                                                    .center,
+                                                                    .start,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .start,
                                                             children: [
+                                                              Container(
+                                                                child: Row(
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceBetween,
+                                                                  children: [
+                                                                    Text(
+                                                                      name,
+                                                                      style: TextStyle(
+                                                                          fontSize:
+                                                                              20,
+                                                                          fontWeight:
+                                                                              FontWeight.bold),
+                                                                    ),
+                                                                    InkWell(
+                                                                      onTap:
+                                                                          () {
+                                                                        setState(
+                                                                            () {
+                                                                          itemCount[index][indexOfElement] =
+                                                                              1;
+                                                                        });
+                                                                        Navigator.pop(
+                                                                            context);
+                                                                      },
+                                                                      child:
+                                                                          SizedBox(
+                                                                        width:
+                                                                            70,
+                                                                        child:
+                                                                            Card(
+                                                                          elevation:
+                                                                              3,
+                                                                          shape:
+                                                                              RoundedRectangleBorder(
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(10),
+                                                                          ),
+                                                                          child:
+                                                                              Center(
+                                                                            child:
+                                                                                Text(
+                                                                              "Add",
+                                                                              style: TextStyle(
+                                                                                color: Colors.red,
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
                                                               Text(
-                                                                name,
-                                                                style: TextStyle(
-                                                                    fontSize:
-                                                                        20,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold),
+                                                                tabName[index],
+                                                                style:
+                                                                    TextStyle(
+                                                                  color: HexColor(
+                                                                      "8A8989"),
+                                                                ),
+                                                              ),
+                                                              Padding(
+                                                                padding: EdgeInsets
+                                                                    .only(
+                                                                        top:
+                                                                            20.0),
+                                                                child: SizedBox(
+                                                                  width: MediaQuery.of(
+                                                                          context)
+                                                                      .size
+                                                                      .width,
+                                                                  height: 145,
+                                                                  child: Row(
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
+                                                                    children: [
+                                                                      Container(
+                                                                        height:
+                                                                            160,
+                                                                        width: MediaQuery.of(context).size.width *
+                                                                            0.85,
+                                                                        child:
+                                                                            Column(
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.start,
+                                                                          children: [
+                                                                            Row(
+                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                              children: [
+                                                                                Row(
+                                                                                  children: [
+                                                                                    IconButton(
+                                                                                      onPressed: () {
+                                                                                        set(() {
+                                                                                          if (selectedIndex[indexOfElement] == 0) {
+                                                                                            selectedIndex[indexOfElement] = -1;
+                                                                                          } else {
+                                                                                            selectedIndex[indexOfElement] = 0;
+                                                                                            indexPrice[indexOfElement] = 0;
+                                                                                            /////////////////////////////////////////////////////////////
+                                                                                          }
+                                                                                        });
+                                                                                      },
+                                                                                      icon: selectedIndex[indexOfElement] == 0 ? Icon(Icons.radio_button_checked, color: Colors.red) : Icon(Icons.circle_outlined),
+                                                                                    ),
+                                                                                    Text("1 kg"),
+                                                                                  ],
+                                                                                ),
+                                                                                Text("Rs. $priceOf1kg"),
+                                                                              ],
+                                                                            ),
+                                                                            Row(
+                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                              children: [
+                                                                                Row(
+                                                                                  children: [
+                                                                                    IconButton(
+                                                                                      onPressed: () {
+                                                                                        set(() {
+                                                                                          if (selectedIndex[indexOfElement] == 1) {
+                                                                                            selectedIndex[indexOfElement] = -1;
+                                                                                          } else
+                                                                                            selectedIndex[indexOfElement] = 1;
+                                                                                        });
+                                                                                      },
+                                                                                      icon: selectedIndex[indexOfElement] == 1 ? Icon(Icons.radio_button_checked, color: Colors.red) : Icon(Icons.circle_outlined),
+                                                                                    ),
+                                                                                    Text("2 kg"),
+                                                                                  ],
+                                                                                ),
+                                                                                Text("Rs. $priceOf2kg"),
+                                                                              ],
+                                                                            ),
+                                                                            Row(
+                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                              children: [
+                                                                                Row(
+                                                                                  children: [
+                                                                                    IconButton(
+                                                                                      onPressed: () {
+                                                                                        set(() {
+                                                                                          if (selectedIndex[indexOfElement] == 2) {
+                                                                                            selectedIndex[indexOfElement] = -1;
+                                                                                          } else
+                                                                                            selectedIndex[indexOfElement] = 2;
+                                                                                        });
+                                                                                      },
+                                                                                      icon: selectedIndex[indexOfElement] == 2 ? Icon(Icons.radio_button_checked, color: Colors.red) : Icon(Icons.circle_outlined),
+                                                                                    ),
+                                                                                    Text("5 kg"),
+                                                                                  ],
+                                                                                ),
+                                                                                Text("Rs. $priceOf5kg"),
+                                                                              ],
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      )
+                                                                    ],
+                                                                  ),
+                                                                ),
                                                               )
                                                             ],
-                                                          )
-                                                        ],
-                                                      ),
-                                                    );
+                                                          ),
+                                                        ),
+                                                      );
+                                                    });
                                                   },
                                                 );
-                                                setState(() {
-                                                  itemCount[index]
-                                                      [indexOfElement] = 1;
-                                                });
                                               },
                                               child: SizedBox(
                                                 width: 70,
@@ -235,7 +400,7 @@ class _ItemsOfShopState extends State<ItemsOfShop> {
                       )
                     ],
                   ),
-                if (indexPrice == 1)
+                if (indexPrice[indexOfElement] == 1)
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     // mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -298,7 +463,7 @@ class _ItemsOfShopState extends State<ItemsOfShop> {
                       )
                     ],
                   ),
-                if (indexPrice == 2)
+                if (indexPrice[indexOfElement] == 2)
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     // mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -542,11 +707,11 @@ class _ItemsOfShopState extends State<ItemsOfShop> {
                       ),
                       child: TabBarView(
                         children: <Widget>[
+                          //For 1st tab
                           Padding(
                             padding: const EdgeInsets.symmetric(
                                 vertical: 12.0, horizontal: 20),
                             child: ListView(
-                              // physics: NeverScrollableScrollPhysics(),
                               children: [
                                 Padding(
                                   padding: EdgeInsets.only(top: 10),
@@ -567,32 +732,6 @@ class _ItemsOfShopState extends State<ItemsOfShop> {
                                     image: AssetImage("assets/potato.png"),
                                     index: 0,
                                     indexOfElement: 1,
-                                    context: context,
-                                    name: "Potato",
-                                    priceOf1kg: 25,
-                                    priceOf2kg: 50,
-                                    priceOf5kg: 125,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(top: 10),
-                                  child: items(
-                                    image: AssetImage("assets/potato.png"),
-                                    index: 0,
-                                    indexOfElement: 2,
-                                    context: context,
-                                    name: "Potato",
-                                    priceOf1kg: 25,
-                                    priceOf2kg: 50,
-                                    priceOf5kg: 125,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(top: 10),
-                                  child: items(
-                                    image: AssetImage("assets/potato.png"),
-                                    index: 0,
-                                    indexOfElement: 3,
                                     context: context,
                                     name: "Potato",
                                     priceOf1kg: 25,
@@ -603,187 +742,28 @@ class _ItemsOfShopState extends State<ItemsOfShop> {
                               ],
                             ),
                           ),
+                          //For 2nd tab
                           Padding(
                             padding: const EdgeInsets.symmetric(
                                 vertical: 12.0, horizontal: 20),
                             child: ListView(
-                              // physics: NeverScrollableScrollPhysics(),
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(top: 10),
-                                  child: items(
-                                    image: AssetImage("assets/potato.png"),
-                                    index: 1,
-                                    indexOfElement: 0,
-                                    context: context,
-                                    name: "Fruits",
-                                    priceOf1kg: 25,
-                                    priceOf2kg: 50,
-                                    priceOf5kg: 125,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(top: 10),
-                                  child: items(
-                                    image: AssetImage("assets/potato.png"),
-                                    index: 1,
-                                    indexOfElement: 1,
-                                    context: context,
-                                    name: "Fruits",
-                                    priceOf1kg: 25,
-                                    priceOf2kg: 50,
-                                    priceOf5kg: 125,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(top: 10),
-                                  child: items(
-                                    image: AssetImage("assets/potato.png"),
-                                    index: 1,
-                                    indexOfElement: 2,
-                                    context: context,
-                                    name: "Fruits",
-                                    priceOf1kg: 25,
-                                    priceOf2kg: 50,
-                                    priceOf5kg: 125,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(top: 10),
-                                  child: items(
-                                    image: AssetImage("assets/potato.png"),
-                                    index: 1,
-                                    indexOfElement: 3,
-                                    context: context,
-                                    name: "Fruits",
-                                    priceOf1kg: 25,
-                                    priceOf2kg: 50,
-                                    priceOf5kg: 125,
-                                  ),
-                                ),
-                              ],
+                              children: [],
                             ),
                           ),
+                          //For 3rd tab
                           Padding(
                             padding: const EdgeInsets.symmetric(
                                 vertical: 12.0, horizontal: 20),
                             child: ListView(
-                              // physics: NeverScrollableScrollPhysics(),
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(top: 10),
-                                  child: items(
-                                    image: AssetImage("assets/potato.png"),
-                                    index: 2,
-                                    indexOfElement: 0,
-                                    context: context,
-                                    name: "Herbs",
-                                    priceOf1kg: 25,
-                                    priceOf2kg: 50,
-                                    priceOf5kg: 125,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(top: 10),
-                                  child: items(
-                                    image: AssetImage("assets/potato.png"),
-                                    index: 2,
-                                    indexOfElement: 1,
-                                    context: context,
-                                    name: "Herbs",
-                                    priceOf1kg: 25,
-                                    priceOf2kg: 50,
-                                    priceOf5kg: 125,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(top: 10),
-                                  child: items(
-                                    image: AssetImage("assets/potato.png"),
-                                    index: 2,
-                                    indexOfElement: 2,
-                                    context: context,
-                                    name: "Herbs",
-                                    priceOf1kg: 25,
-                                    priceOf2kg: 50,
-                                    priceOf5kg: 125,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(top: 10),
-                                  child: items(
-                                    image: AssetImage("assets/potato.png"),
-                                    index: 2,
-                                    indexOfElement: 3,
-                                    context: context,
-                                    name: "Herbs",
-                                    priceOf1kg: 25,
-                                    priceOf2kg: 50,
-                                    priceOf5kg: 125,
-                                  ),
-                                ),
-                              ],
+                              children: [],
                             ),
                           ),
+                          //For 4th tab
                           Padding(
                             padding: const EdgeInsets.symmetric(
                                 vertical: 12.0, horizontal: 20),
                             child: ListView(
-                              // physics: NeverScrollableScrollPhysics(),
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(top: 10),
-                                  child: items(
-                                    image: AssetImage("assets/potato.png"),
-                                    index: 3,
-                                    indexOfElement: 0,
-                                    context: context,
-                                    name: "Mushroom",
-                                    priceOf1kg: 25,
-                                    priceOf2kg: 50,
-                                    priceOf5kg: 125,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(top: 10),
-                                  child: items(
-                                    image: AssetImage("assets/potato.png"),
-                                    index: 3,
-                                    indexOfElement: 1,
-                                    context: context,
-                                    name: "Mushroom",
-                                    priceOf1kg: 25,
-                                    priceOf2kg: 50,
-                                    priceOf5kg: 125,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(top: 10),
-                                  child: items(
-                                    image: AssetImage("assets/potato.png"),
-                                    index: 3,
-                                    indexOfElement: 2,
-                                    context: context,
-                                    name: "Mushroom",
-                                    priceOf1kg: 25,
-                                    priceOf2kg: 50,
-                                    priceOf5kg: 125,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(top: 10),
-                                  child: items(
-                                    image: AssetImage("assets/potato.png"),
-                                    index: 3,
-                                    indexOfElement: 3,
-                                    context: context,
-                                    name: "Mushroom",
-                                    priceOf1kg: 25,
-                                    priceOf2kg: 50,
-                                    priceOf5kg: 125,
-                                  ),
-                                ),
-                              ],
+                              children: [],
                             ),
                           ),
                         ],
