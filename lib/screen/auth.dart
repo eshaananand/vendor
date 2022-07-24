@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vendor_app/screen/location.dart';
 import 'package:vendor_app/screen/location_fetch.dart';
 
 class Auth extends StatefulWidget {
@@ -20,7 +21,7 @@ class _AuthState extends State<Auth> {
           child: InkWell(
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Location_fetch()));
+                  context, MaterialPageRoute(builder: (context) => Location()));
             },
             child: SizedBox(
               height: kToolbarHeight,
@@ -78,7 +79,9 @@ class _AuthState extends State<Auth> {
                     ],
                   ),
                 ),
-                SizedBox(height: 50,),
+                SizedBox(
+                  height: 50,
+                ),
                 Padding(
                   padding: const EdgeInsets.all(25.0),
                   child: Column(
@@ -88,10 +91,12 @@ class _AuthState extends State<Auth> {
                         "First Name:",
                         style: TextStyle(color: Colors.red, fontSize: 15),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(
+                        height: 10,
+                      ),
                       TextFormField(
                         validator: (value) =>
-                        value!.isEmpty ? 'Enter your first name' : null,
+                            value!.isEmpty ? 'Enter your first name' : null,
                         style: TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                             contentPadding: EdgeInsets.only(
@@ -107,15 +112,19 @@ class _AuthState extends State<Auth> {
                               borderRadius: BorderRadius.circular(25.0),
                             )),
                       ),
-                      SizedBox(height: 30,),
+                      SizedBox(
+                        height: 30,
+                      ),
                       Text(
                         "Last Name:",
                         style: TextStyle(color: Colors.red, fontSize: 15),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(
+                        height: 10,
+                      ),
                       TextFormField(
                         validator: (value) =>
-                        value!.isEmpty ? 'Enter your last name' : null,
+                            value!.isEmpty ? 'Enter your last name' : null,
                         style: TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                             contentPadding: EdgeInsets.only(
@@ -131,15 +140,19 @@ class _AuthState extends State<Auth> {
                               borderRadius: BorderRadius.circular(25.0),
                             )),
                       ),
-                      SizedBox(height: 30,),
+                      SizedBox(
+                        height: 30,
+                      ),
                       Text(
                         "E-mail:",
                         style: TextStyle(color: Colors.red, fontSize: 15),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(
+                        height: 10,
+                      ),
                       TextFormField(
                         validator: (value) =>
-                        value!.isEmpty ? 'Enter your email' : null,
+                            value!.isEmpty ? 'Enter your email' : null,
                         style: TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                             contentPadding: EdgeInsets.only(
@@ -158,7 +171,6 @@ class _AuthState extends State<Auth> {
                     ],
                   ),
                 ),
-
               ]),
         ),
       ),
