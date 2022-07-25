@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
+import 'package:vendor_app/screen/coupons.dart';
 
 class Cart extends StatefulWidget {
   Cart({Key? key}) : super(key: key);
@@ -238,7 +240,15 @@ class _CartState extends State<Cart> {
                         padding:
                             EdgeInsets.only(top: 30.0, left: 20, right: 20),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            pushNewScreen(
+                              context,
+                              screen: Coupons(),
+                              withNavBar: false,
+                              pageTransitionAnimation:
+                                  PageTransitionAnimation.cupertino,
+                            );
+                          },
                           child: Container(
                             height: 50,
                             width: MediaQuery.of(context).size.width,
