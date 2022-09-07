@@ -56,460 +56,462 @@ class _CategoriesState extends State<Categories> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: h(0.061),
-            ),
-            Container(
-              //
-              height: h(0.058),
-              decoration: BoxDecoration(
-                boxShadow: kElevationToShadow[4],
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(25),
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: h(0.061),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 10,
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.arrow_back,
-                          size: 30,
-                          color: Colors.red,
+              Container(
+                //
+                height: h(0.058),
+                decoration: BoxDecoration(
+                  boxShadow: kElevationToShadow[4],
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 10,
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.arrow_back,
+                            size: 30,
+                            color: Colors.red,
+                          ),
+                        ),
+                        Text(
+                          "All Categories",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.red,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        IconButton(
+                          icon: Icon(Icons.qr_code, color: Colors.red),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.shopping_cart_outlined,
+                              color: Colors.red),
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SingleChildScrollView(
+                child: Row(
+                  children: [
+                    Container(
+                      // height: h(0.77),
+                      width: w(0.35),
+                      color: HexColor("D9D9D9"),
+                      child: SingleChildScrollView(
+                        child: ListView(
+                          physics: NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          padding: const EdgeInsets.only(top: 10.0, bottom: 20),
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    if (index == 0)
+                                      index = -1;
+                                    else
+                                      index = 0;
+                                  });
+                                },
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  elevation: 5,
+                                  child: Container(
+                                    // padding: EdgeInsets.only(top: 4),
+                                    height: 100,
+                                    // width: 50,
+                                    decoration: BoxDecoration(
+                                      color: index == 0
+                                          ? HexColor("FD2E2E").withOpacity(0.45)
+                                          : Colors.white,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Image.asset(
+                                          "assets/vegetable.png",
+                                        ),
+                                        // Text("Vegetables And Fruits"),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              top: 10.0, left: 10, right: 10),
+                                          child: AutoSizeText(
+                                            "Vegetables & Fruits",
+                                            minFontSize: 1,
+                                            maxLines: 1,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 5, vertical: 5),
+                              child: InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    if (index == 1)
+                                      index = -1;
+                                    else
+                                      index = 1;
+                                  });
+                                },
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  elevation: 5,
+                                  child: Container(
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      // color: Colors.white,
+                                      color: index == 1
+                                          ? HexColor("FD2E2E").withOpacity(0.45)
+                                          : Colors.white,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Image.asset(
+                                          "assets/vegetable.png",
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              top: 10.0, left: 10, right: 10),
+                                          child: AutoSizeText(
+                                            "Vegetables & Fruits",
+                                            minFontSize: 1,
+                                            maxLines: 1,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 5, vertical: 2.5),
+                              child: InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    if (index == 2)
+                                      index = -1;
+                                    else
+                                      index = 2;
+                                  });
+                                },
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  elevation: 5,
+                                  child: Container(
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      // color: Colors.white,
+                                      color: index == 2
+                                          ? HexColor("FD2E2E").withOpacity(0.45)
+                                          : Colors.white,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Image.asset(
+                                          "assets/vegetable.png",
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              top: 10.0, left: 10, right: 10),
+                                          child: AutoSizeText(
+                                            "Vegetables",
+                                            minFontSize: 1,
+                                            maxLines: 1,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 5, vertical: 2.5),
+                              child: InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    if (index == 3)
+                                      index = -1;
+                                    else
+                                      index = 3;
+                                  });
+                                },
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  elevation: 5,
+                                  child: Container(
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      // color: Colors.white,
+                                      color: index == 3
+                                          ? HexColor("FD2E2E").withOpacity(0.45)
+                                          : Colors.white,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Image.asset(
+                                          "assets/vegetable.png",
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              top: 10.0, left: 10, right: 10),
+                                          child: AutoSizeText(
+                                            "Vegetables & Fruits",
+                                            minFontSize: 1,
+                                            maxLines: 1,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 5, vertical: 2.5),
+                              child: InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    if (index == 4)
+                                      index = -1;
+                                    else
+                                      index = 4;
+                                  });
+                                },
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  elevation: 5,
+                                  child: Container(
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      // color: Colors.white,
+                                      color: index == 4
+                                          ? HexColor("FD2E2E").withOpacity(0.45)
+                                          : Colors.white,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Image.asset(
+                                          "assets/vegetable.png",
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              top: 10.0, left: 10, right: 10),
+                                          child: AutoSizeText(
+                                            "Vegetables & Fruits",
+                                            minFontSize: 1,
+                                            maxLines: 1,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      Text(
-                        "All Categories",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.red,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      IconButton(
-                        icon: Icon(Icons.qr_code, color: Colors.red),
-                        onPressed: () {},
-                      ),
-                      IconButton(
-                        icon: Icon(Icons.shopping_cart_outlined,
-                            color: Colors.red),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Row(
-              children: [
-                SingleChildScrollView(
-                  child: Container(
-                    height: h(0.77),
-                    width: w(0.35),
-                    color: HexColor("D9D9D9"),
-                    child: SingleChildScrollView(
+                    ),
+                    Container(
+                      height: h(0.77),
+                      width: w(0.65),
                       child: ListView(
                         physics: NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
-                        padding: const EdgeInsets.only(top: 10.0, bottom: 20),
+                        padding: const EdgeInsets.only(top: 10.0),
                         children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 5),
-                            child: InkWell(
-                              onTap: () {
-                                setState(() {
-                                  if (index == 0)
-                                    index = -1;
-                                  else
-                                    index = 0;
-                                });
-                              },
-                              child: Card(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                elevation: 5,
-                                child: Container(
-                                  // padding: EdgeInsets.only(top: 4),
-                                  height: 100,
-                                  // width: 50,
-                                  decoration: BoxDecoration(
-                                    color: index == 0
-                                        ? HexColor("FD2E2E").withOpacity(0.45)
-                                        : Colors.white,
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      Image.asset(
-                                        "assets/vegetable.png",
-                                      ),
-                                      // Text("Vegetables And Fruits"),
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            top: 10.0, left: 10, right: 10),
-                                        child: AutoSizeText(
-                                          "Vegetables & Fruits",
-                                          minFontSize: 1,
-                                          maxLines: 1,
-                                        ),
-                                      ),
-                                    ],
+                          if (index == -1)
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: w(0.06), vertical: 20),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: TextFormField(
+                                  controller: searchController,
+                                  style: TextStyle(fontSize: 16.0),
+                                  decoration: InputDecoration(
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        vertical: 14.0),
+                                    border: InputBorder.none,
+                                    hintText: "Search item or store ",
+                                    fillColor: HexColor("D9D9D9"),
+                                    filled: true,
+                                    prefixIcon: Icon(Icons.search),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 5, vertical: 5),
-                            child: InkWell(
-                              onTap: () {
-                                setState(() {
-                                  if (index == 1)
-                                    index = -1;
-                                  else
-                                    index = 1;
-                                });
-                              },
-                              child: Card(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                elevation: 5,
-                                child: Container(
-                                  height: 100,
-                                  decoration: BoxDecoration(
-                                    // color: Colors.white,
-                                    color: index == 1
-                                        ? HexColor("FD2E2E").withOpacity(0.45)
-                                        : Colors.white,
-                                    borderRadius: BorderRadius.circular(10),
+                          if (index == 0)
+                            SizedBox(
+                              height: h(1),
+                              width: w(1),
+                              child: ListView(
+                                physics: NeverScrollableScrollPhysics(),
+                                padding: const EdgeInsets.only(top: 10),
+                                children: [
+                                  vegetableCategory(
+                                    type: "Leafy vegetables ",
+                                    onTap: () {},
                                   ),
-                                  child: Column(
-                                    children: [
-                                      Image.asset(
-                                        "assets/vegetable.png",
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            top: 10.0, left: 10, right: 10),
-                                        child: AutoSizeText(
-                                          "Vegetables & Fruits",
-                                          minFontSize: 1,
-                                          maxLines: 1,
-                                        ),
-                                      ),
-                                    ],
+                                  vegetableCategory(
+                                    type: "Leafy vegetables ",
+                                    onTap: () {},
                                   ),
-                                ),
+                                  vegetableCategory(
+                                    type: "Leafy vegetables ",
+                                    onTap: () {},
+                                  ),
+                                  vegetableCategory(
+                                    type: "Leafy vegetables ",
+                                    onTap: () {},
+                                  ),
+                                  vegetableCategory(
+                                    type: "Leafy vegetables ",
+                                    onTap: () {},
+                                  ),
+                                  vegetableCategory(
+                                    type: "Leafy vegetables ",
+                                    onTap: () {},
+                                  ),
+                                ],
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 5, vertical: 2.5),
-                            child: InkWell(
-                              onTap: () {
-                                setState(() {
-                                  if (index == 2)
-                                    index = -1;
-                                  else
-                                    index = 2;
-                                });
-                              },
-                              child: Card(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                elevation: 5,
-                                child: Container(
-                                  height: 100,
-                                  decoration: BoxDecoration(
-                                    // color: Colors.white,
-                                    color: index == 2
-                                        ? HexColor("FD2E2E").withOpacity(0.45)
-                                        : Colors.white,
-                                    borderRadius: BorderRadius.circular(10),
+                          if (index == 1)
+                            SizedBox(
+                              height: h(1),
+                              width: w(1),
+                              child: ListView(
+                                physics: NeverScrollableScrollPhysics(),
+                                padding: const EdgeInsets.only(top: 10),
+                                children: [
+                                  vegetableCategory(
+                                    type: "Foods and Meals",
+                                    onTap: () {},
                                   ),
-                                  child: Column(
-                                    children: [
-                                      Image.asset(
-                                        "assets/vegetable.png",
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            top: 10.0, left: 10, right: 10),
-                                        child: AutoSizeText(
-                                          "Vegetables",
-                                          minFontSize: 1,
-                                          maxLines: 1,
-                                        ),
-                                      ),
-                                    ],
+                                  vegetableCategory(
+                                    type: "Foods and Meals ",
+                                    onTap: () {},
                                   ),
-                                ),
+                                  vegetableCategory(
+                                    type: "Foods and Meals",
+                                    onTap: () {},
+                                  ),
+                                  vegetableCategory(
+                                    type: "Foods and Meals",
+                                    onTap: () {},
+                                  ),
+                                  vegetableCategory(
+                                    type: "Foods and Meals",
+                                    onTap: () {},
+                                  ),
+                                  vegetableCategory(
+                                    type: "Foods and Meals",
+                                    onTap: () {},
+                                  ),
+                                ],
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 5, vertical: 2.5),
-                            child: InkWell(
-                              onTap: () {
-                                setState(() {
-                                  if (index == 3)
-                                    index = -1;
-                                  else
-                                    index = 3;
-                                });
-                              },
-                              child: Card(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                elevation: 5,
-                                child: Container(
-                                  height: 100,
-                                  decoration: BoxDecoration(
-                                    // color: Colors.white,
-                                    color: index == 3
-                                        ? HexColor("FD2E2E").withOpacity(0.45)
-                                        : Colors.white,
-                                    borderRadius: BorderRadius.circular(10),
+                          if (index == 2)
+                            SizedBox(
+                              height: h(1),
+                              width: w(1),
+                              child: ListView(
+                                physics: NeverScrollableScrollPhysics(),
+                                padding: const EdgeInsets.only(top: 10),
+                                children: [
+                                  vegetableCategory(
+                                    type: "Dairy Products",
+                                    onTap: () {},
                                   ),
-                                  child: Column(
-                                    children: [
-                                      Image.asset(
-                                        "assets/vegetable.png",
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            top: 10.0, left: 10, right: 10),
-                                        child: AutoSizeText(
-                                          "Vegetables & Fruits",
-                                          minFontSize: 1,
-                                          maxLines: 1,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                                ],
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 5, vertical: 2.5),
-                            child: InkWell(
-                              onTap: () {
-                                setState(() {
-                                  if (index == 4)
-                                    index = -1;
-                                  else
-                                    index = 4;
-                                });
-                              },
-                              child: Card(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                elevation: 5,
-                                child: Container(
-                                  height: 100,
-                                  decoration: BoxDecoration(
-                                    // color: Colors.white,
-                                    color: index == 4
-                                        ? HexColor("FD2E2E").withOpacity(0.45)
-                                        : Colors.white,
-                                    borderRadius: BorderRadius.circular(10),
+                          if (index == 3)
+                            SizedBox(
+                              height: h(1),
+                              width: w(1),
+                              child: ListView(
+                                physics: NeverScrollableScrollPhysics(),
+                                padding: const EdgeInsets.only(top: 10),
+                                children: [
+                                  vegetableCategory(
+                                    type: "Medicine",
+                                    onTap: () {},
                                   ),
-                                  child: Column(
-                                    children: [
-                                      Image.asset(
-                                        "assets/vegetable.png",
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            top: 10.0, left: 10, right: 10),
-                                        child: AutoSizeText(
-                                          "Vegetables & Fruits",
-                                          minFontSize: 1,
-                                          maxLines: 1,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                                ],
                               ),
                             ),
-                          ),
+                          if (index == 4)
+                            SizedBox(
+                              height: h(1),
+                              width: w(1),
+                              child: ListView(
+                                physics: NeverScrollableScrollPhysics(),
+                                padding: const EdgeInsets.only(top: 10),
+                                children: [
+                                  vegetableCategory(
+                                    type: "Snacks",
+                                    onTap: () {},
+                                  ),
+                                ],
+                              ),
+                            ),
                         ],
                       ),
                     ),
-                  ),
+                  ],
                 ),
-                Container(
-                  height: h(0.77),
-                  width: w(0.65),
-                  child: ListView(
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    padding: const EdgeInsets.only(top: 10.0),
-                    children: [
-                      if (index == -1)
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: w(0.06), vertical: 20),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: TextFormField(
-                              controller: searchController,
-                              style: TextStyle(fontSize: 16.0),
-                              decoration: InputDecoration(
-                                contentPadding:
-                                    const EdgeInsets.symmetric(vertical: 14.0),
-                                border: InputBorder.none,
-                                hintText: "Search item or store ",
-                                fillColor: HexColor("D9D9D9"),
-                                filled: true,
-                                prefixIcon: Icon(Icons.search),
-                              ),
-                            ),
-                          ),
-                        ),
-                      if (index == 0)
-                        SizedBox(
-                          height: h(1),
-                          width: w(1),
-                          child: ListView(
-                            physics: NeverScrollableScrollPhysics(),
-                            padding: const EdgeInsets.only(top: 10),
-                            children: [
-                              vegetableCategory(
-                                type: "Leafy vegetables ",
-                                onTap: () {},
-                              ),
-                              vegetableCategory(
-                                type: "Leafy vegetables ",
-                                onTap: () {},
-                              ),
-                              vegetableCategory(
-                                type: "Leafy vegetables ",
-                                onTap: () {},
-                              ),
-                              vegetableCategory(
-                                type: "Leafy vegetables ",
-                                onTap: () {},
-                              ),
-                              vegetableCategory(
-                                type: "Leafy vegetables ",
-                                onTap: () {},
-                              ),
-                              vegetableCategory(
-                                type: "Leafy vegetables ",
-                                onTap: () {},
-                              ),
-                            ],
-                          ),
-                        ),
-                      if (index == 1)
-                        SizedBox(
-                          height: h(1),
-                          width: w(1),
-                          child: ListView(
-                            physics: NeverScrollableScrollPhysics(),
-                            padding: const EdgeInsets.only(top: 10),
-                            children: [
-                              vegetableCategory(
-                                type: "Foods and Meals",
-                                onTap: () {},
-                              ),
-                              vegetableCategory(
-                                type: "Foods and Meals ",
-                                onTap: () {},
-                              ),
-                              vegetableCategory(
-                                type: "Foods and Meals",
-                                onTap: () {},
-                              ),
-                              vegetableCategory(
-                                type: "Foods and Meals",
-                                onTap: () {},
-                              ),
-                              vegetableCategory(
-                                type: "Foods and Meals",
-                                onTap: () {},
-                              ),
-                              vegetableCategory(
-                                type: "Foods and Meals",
-                                onTap: () {},
-                              ),
-                            ],
-                          ),
-                        ),
-                      if (index == 2)
-                        SizedBox(
-                          height: h(1),
-                          width: w(1),
-                          child: ListView(
-                            physics: NeverScrollableScrollPhysics(),
-                            padding: const EdgeInsets.only(top: 10),
-                            children: [
-                              vegetableCategory(
-                                type: "Dairy Products",
-                                onTap: () {},
-                              ),
-                            ],
-                          ),
-                        ),
-                      if (index == 3)
-                        SizedBox(
-                          height: h(1),
-                          width: w(1),
-                          child: ListView(
-                            physics: NeverScrollableScrollPhysics(),
-                            padding: const EdgeInsets.only(top: 10),
-                            children: [
-                              vegetableCategory(
-                                type: "Medicine",
-                                onTap: () {},
-                              ),
-                            ],
-                          ),
-                        ),
-                      if (index == 4)
-                        SizedBox(
-                          height: h(1),
-                          width: w(1),
-                          child: ListView(
-                            physics: NeverScrollableScrollPhysics(),
-                            padding: const EdgeInsets.only(top: 10),
-                            children: [
-                              vegetableCategory(
-                                type: "Snacks",
-                                onTap: () {},
-                              ),
-                            ],
-                          ),
-                        ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
         ),
       ),
     );

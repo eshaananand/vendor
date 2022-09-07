@@ -9,6 +9,8 @@ import 'package:vendor_app/screen/categories.dart';
 import 'package:vendor_app/screen/homePage.dart';
 import 'package:vendor_app/screen/location_fetch.dart';
 import 'package:vendor_app/screen/login2.dart';
+import 'package:vendor_app/screen/myAccount.dart';
+import 'package:vendor_app/screen/orderHistory.dart';
 
 class PersistentNavBar extends StatelessWidget {
   const PersistentNavBar({Key? key}) : super(key: key);
@@ -39,6 +41,20 @@ class PersistentNavBar extends StatelessWidget {
           activeColorSecondary: Colors.white,
           inactiveColorPrimary: Colors.white,
         ),
+        PersistentBottomNavBarItem(
+          icon: Icon(Icons.shopping_bag_outlined),
+          title: ("Order"),
+          activeColorPrimary: Colors.red,
+          activeColorSecondary: Colors.white,
+          inactiveColorPrimary: Colors.white,
+        ),
+        PersistentBottomNavBarItem(
+          icon: Icon(Icons.person_outlined),
+          title: ("Profile"),
+          activeColorPrimary: Colors.red,
+          activeColorSecondary: Colors.white,
+          inactiveColorPrimary: Colors.white,
+        ),
       ];
     }
 
@@ -51,6 +67,8 @@ class PersistentNavBar extends StatelessWidget {
       screens: [
         homepage(),
         Categories(),
+        OrderPayment(),
+        MyAccount(),
       ],
       items: _navBarsItems(),
       navBarStyle: NavBarStyle.style9,
