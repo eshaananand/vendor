@@ -42,6 +42,7 @@ dependencies:
   checkbox_grouped: ^1.8.1
   flutter_rating_bar: ^4.0.1
   contained_tab_bar_view: ^0.8.0
+  another_stepper: ^1.0.4
 
 dev_dependencies:
   flutter_test:

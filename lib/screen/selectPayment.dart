@@ -5,7 +5,23 @@ import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:vendor_app/screen/orderPlaced.dart';
 
 class SelectPayment extends StatelessWidget {
-  const SelectPayment({Key? key}) : super(key: key);
+  SelectPayment({
+    Key? key,
+    this.onWalletTap,
+    this.onDebitCardTap,
+    this.onCreditCardTap,
+    this.onCashOnDeliveryTap,
+    this.onRazorPayTap,
+    this.onStripeTap,
+  }) : super(key: key);
+
+//You can assign individual buttons a function on the Select Payment page
+  Function()? onWalletTap;
+  Function()? onDebitCardTap;
+  Function()? onCreditCardTap;
+  Function()? onCashOnDeliveryTap;
+  Function()? onRazorPayTap;
+  Function()? onStripeTap;
 
   Widget paymetType(
       {required String name,
@@ -106,77 +122,41 @@ class SelectPayment extends StatelessWidget {
                       ),
                     ),
                     paymetType(
-                      image: "wallet.png",
-                      name: "Wallet",
-                      onTap: () {
-                        pushNewScreen(
-                          context,
-                          screen: OrderPlaced(),
-                        );
-                      },
-                    ),
+                        image: "wallet.png",
+                        name: "Wallet",
+                        onTap: onWalletTap),
                     Padding(
                       padding: EdgeInsets.only(top: 25.0),
                       child: Text("CARDS"),
                     ),
                     paymetType(
-                      image: "debitCard.png",
-                      name: "Debit Card",
-                      onTap: () {
-                        pushNewScreen(
-                          context,
-                          screen: OrderPlaced(),
-                        );
-                      },
-                    ),
+                        image: "debitCard.png",
+                        name: "Debit Card",
+                        onTap: onDebitCardTap),
                     paymetType(
-                      image: "debitCard.png",
-                      name: "Credit Card",
-                      onTap: () {
-                        pushNewScreen(
-                          context,
-                          screen: OrderPlaced(),
-                        );
-                      },
-                    ),
+                        image: "debitCard.png",
+                        name: "Credit Card",
+                        onTap: onCreditCardTap),
                     Padding(
                       padding: EdgeInsets.only(top: 25.0),
                       child: Text("CASH"),
                     ),
                     paymetType(
-                      image: "cod.png",
-                      name: "Cash on Delivery",
-                      onTap: () {
-                        pushNewScreen(
-                          context,
-                          screen: OrderPlaced(),
-                        );
-                      },
-                    ),
+                        image: "cod.png",
+                        name: "Cash on Delivery",
+                        onTap: onCashOnDeliveryTap),
                     Padding(
                       padding: EdgeInsets.only(top: 25.0),
                       child: Text("OTHERS"),
                     ),
                     paymetType(
-                      image: "razorPay.png",
-                      name: "RazorPay",
-                      onTap: () {
-                        pushNewScreen(
-                          context,
-                          screen: OrderPlaced(),
-                        );
-                      },
-                    ),
+                        image: "razorPay.png",
+                        name: "RazorPay",
+                        onTap: onRazorPayTap),
                     paymetType(
-                      image: "stripe.png",
-                      name: "Stripe",
-                      onTap: () {
-                        pushNewScreen(
-                          context,
-                          screen: OrderPlaced(),
-                        );
-                      },
-                    ),
+                        image: "stripe.png",
+                        name: "Stripe",
+                        onTap: onStripeTap),
                   ],
                 ),
               ),

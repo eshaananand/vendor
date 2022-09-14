@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:vendor_app/screen/coupons.dart';
+import 'package:vendor_app/screen/orderPlaced.dart';
 import 'package:vendor_app/screen/selectPayment.dart';
 
 class Cart extends StatefulWidget {
@@ -152,7 +153,26 @@ class _CartState extends State<Cart> {
             onTap: () {
               pushNewScreen(
                 context,
-                screen: SelectPayment(),
+                screen: SelectPayment(
+                  onWalletTap: () {
+                    pushNewScreen(context, screen: OrderPlaced());
+                  },
+                  onCreditCardTap: () {
+                    pushNewScreen(context, screen: OrderPlaced());
+                  },
+                  onDebitCardTap: () {
+                    pushNewScreen(context, screen: OrderPlaced());
+                  },
+                  onRazorPayTap: () {
+                    pushNewScreen(context, screen: OrderPlaced());
+                  },
+                  onStripeTap: () {
+                    pushNewScreen(context, screen: OrderPlaced());
+                  },
+                  onCashOnDeliveryTap: () {
+                    pushNewScreen(context, screen: OrderPlaced());
+                  },
+                ),
                 withNavBar: false,
                 pageTransitionAnimation: PageTransitionAnimation.cupertino,
               );

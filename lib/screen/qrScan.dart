@@ -31,31 +31,12 @@ class _QrScanState extends State<QrScan> {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Container(
-                height: 300,
-                width: w(1),
-                decoration: BoxDecoration(
-                  border: Border.all(),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(top: 20.0, bottom: 20),
-                      child: Text(
-                        "Swayam Verma",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
-                      ),
-                    ),
-                    Container(
-                      height: 150,
-                      child: Center(
-                        child: Text("Qr code here"),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+                  height: 300,
+                  width: w(1),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(child: Text("Camera here"))),
             ),
             Padding(
               padding: EdgeInsets.all(20.0),
@@ -70,43 +51,13 @@ class _QrScanState extends State<QrScan> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Icon(Icons.share, color: Colors.white),
-                        Text(
-                          "Share My Code",
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 40,
-              width: 150,
-              child: InkWell(
-                onTap: () {},
-                child: Card(
-                  elevation: 5,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      side: BorderSide(
-                        color: Colors.black,
-                      )),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Icon(Icons.download, color: Colors.black),
-                      Text(
-                        "Save to gallery",
+                    child: Center(
+                      child: Text(
+                        "Scan",
                         style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
+                            color: Colors.white, fontWeight: FontWeight.bold),
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),
@@ -214,7 +165,7 @@ class _QrScanState extends State<QrScan> {
     return SafeArea(
       child: Scaffold(
         body: DefaultTabController(
-          length: 3,
+          length: 2,
           child: Column(
             children: [
               SizedBox(
@@ -271,10 +222,10 @@ class _QrScanState extends State<QrScan> {
                     Text('My Code'),
                   ],
                   views: [
-                    Container(color: Colors.red),
+                    scan(),
                     myCode(),
                   ],
-                  onChange: (index) => print(index),
+                  // onChange: (index) => print(index),
                 ),
               ),
             ],

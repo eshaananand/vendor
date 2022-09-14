@@ -390,27 +390,6 @@ class _OrderPaymentState extends State<OrderPayment> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 50,
-              ),
-              Container(
-                //
-                height: 50,
-                decoration: BoxDecoration(
-                  boxShadow: kElevationToShadow[4],
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Center(
-                  child: Text(
-                    "My Orders",
-                    style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.red,
-                    ),
-                  ),
-                ),
-              ),
               Padding(
                 padding: EdgeInsets.only(left: 10.0, top: 20),
                 child: Column(

@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:vendor_app/screen/profile.dart';
 import 'package:vendor_app/screen/qrScan.dart';
+import 'package:vendor_app/screen/refer_and_earn.dart';
 import 'package:vendor_app/screen/savedAddress.dart';
+import 'package:vendor_app/screen/support.dart';
+import 'package:vendor_app/screen/wallet.dart';
 
 class MyAccount extends StatelessWidget {
   const MyAccount({Key? key}) : super(key: key);
@@ -161,13 +164,17 @@ class MyAccount extends StatelessWidget {
                       pushNewScreen(
                         context,
                         screen: SavedAddress(),
+                        withNavBar: false,
                       );
                     },
                   ),
                   accountSettingsImage(
                     icon: "assets/wallet.png",
                     name: "Wallet",
-                    onTap: () {},
+                    onTap: () {
+                      pushNewScreen(context,
+                          screen: Wallet(), withNavBar: false);
+                    },
                   ),
                   accountSettingsIcon(
                     icon: Icons.qr_code_scanner_sharp,
@@ -183,12 +190,24 @@ class MyAccount extends StatelessWidget {
                   accountSettingsIcon(
                     icon: Icons.support_agent_rounded,
                     name: "Support",
-                    onTap: () {},
+                    onTap: () {
+                      pushNewScreen(
+                        context,
+                        screen: Support(),
+                        withNavBar: false,
+                      );
+                    },
                   ),
                   accountSettingsIcon(
                     icon: Icons.people,
                     name: "Refer and Earn",
-                    onTap: () {},
+                    onTap: () {
+                      pushNewScreen(
+                        context,
+                        screen: ReferAndEarn(),
+                        withNavBar: false,
+                      );
+                    },
                   ),
                   accountSettingsImage(
                     icon: "assets/personal_details.png",
