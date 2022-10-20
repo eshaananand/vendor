@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -25,10 +27,10 @@ class LoginPage1 extends StatelessWidget {
                   Center(
                     child: Column(
                       children: <Widget>[
-                        SizedBox(
+                        const SizedBox(
                           height: 80,
                         ),
-                        Text(
+                        const Text(
                           "Log In",
                           style: TextStyle(
                             color: Colors.red,
@@ -36,10 +38,10 @@ class LoginPage1 extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
-                        Text(
+                        const Text(
                           "Log in with one of the following options",
                           style: TextStyle(
                             fontSize: 15,
@@ -48,39 +50,36 @@ class LoginPage1 extends StatelessWidget {
                         ),
                         Row(
                           children: <Widget>[
-                            SizedBox(
+                            const SizedBox(
                               width: 150,
                             ),
-                            Icon(
+                            const Icon(
                               Icons.facebook,
                               color: Colors.blue,
                               size: 50,
                             ),
-                            Icon(
-                              Icons.g_mobiledata,
-                              size: 50,
-                            ),
+                            Image.asset("assets/google.png"),
                           ],
                         )
                       ],
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 40),
+                    padding: const EdgeInsets.symmetric(horizontal: 40),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       //crossAxisAlignment: ,
                       children: <Widget>[
-                        Text(
+                        const Text(
                           "Phone No.:",
                           style: TextStyle(color: Colors.red, fontSize: 15),
                         ),
                         TextFormField(
                           validator: (value) =>
                               value!.isEmpty ? 'Enter your phone number' : null,
-                          style: TextStyle(color: Colors.black),
+                          style: const TextStyle(color: Colors.black),
                           decoration: InputDecoration(
-                              contentPadding: EdgeInsets.only(
+                              contentPadding: const EdgeInsets.only(
                                   left: 15, bottom: 11, top: 11, right: 15),
                               hintText: "Enter your phone number",
                               focusedBorder: OutlineInputBorder(
@@ -89,32 +88,33 @@ class LoginPage1 extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.black),
+                                borderSide:
+                                    const BorderSide(color: Colors.black),
                                 borderRadius: BorderRadius.circular(25.0),
                               )),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 20.0,
                           height: 20.0,
                         ),
                         Center(
                           child: Row(
                             children: <Widget>[
-                              SizedBox(
+                              const SizedBox(
                                 width: 90,
                               ),
                               //Text("Have a ",style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.bold),),
                               RichText(
                                 text: TextSpan(
                                   text: 'Have a ',
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: Colors.black,
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold),
                                   children: <TextSpan>[
                                     TextSpan(
                                       text: 'Refferal',
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           fontWeight: FontWeight.bold,
                                           color: Colors.red),
                                       recognizer: TapGestureRecognizer()
@@ -122,9 +122,9 @@ class LoginPage1 extends StatelessWidget {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    LoginPage2())),
+                                                    const LoginPage2())),
                                     ),
-                                    TextSpan(
+                                    const TextSpan(
                                       text: ' Code ? ',
                                     ),
                                   ],
@@ -137,22 +137,24 @@ class LoginPage1 extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 40),
+                    padding: const EdgeInsets.symmetric(horizontal: 40),
                     child: Container(
                       child: MaterialButton(
                         //minWidth: double.infinity,
                         height: 60,
                         minWidth: 150,
                         onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => Otp()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Otp()));
                         },
                         color: Colors.red,
                         elevation: 5,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25),
                         ),
-                        child: Text(
+                        child: const Text(
                           "Continue",
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
@@ -166,9 +168,9 @@ class LoginPage1 extends StatelessWidget {
                   Container(
                     // padding: EdgeInsets.only(top: 50),
                     height: 300,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         image: DecorationImage(
-                      image: AssetImage("assets/login in.png"),
+                      image: AssetImage("assets/loginIn.png"),
                     )),
                   )
                 ],

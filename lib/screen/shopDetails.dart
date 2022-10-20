@@ -145,36 +145,38 @@ class _ShopDetailsState extends State<ShopDetails> {
                           ),
                           Padding(
                             padding: EdgeInsets.only(bottom: 2.0),
-                            child: Row(
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.location_on,
-                                      color: HexColor("8A8989"),
-                                      size: 12,
-                                    ),
-                                    Text(
-                                      distance.toString() + " | ",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 10,
+                            child: SizedBox(
+                              width: w(0.6),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Icons.location_on,
                                         color: HexColor("8A8989"),
+                                        size: 12,
                                       ),
-                                    ),
-                                    Text(
-                                      storeType,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 10,
-                                        color: HexColor("8A8989"),
+                                      Text(
+                                        distance.toString() + " | ",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 10,
+                                          color: HexColor("8A8989"),
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 100),
-                                  child: Row(
+                                      Text(
+                                        storeType,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 10,
+                                          color: HexColor("8A8989"),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
                                     children: [
                                       Icon(
                                         Icons.timer_sharp,
@@ -191,8 +193,8 @@ class _ShopDetailsState extends State<ShopDetails> {
                                       ),
                                     ],
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ],
@@ -238,7 +240,9 @@ class _ShopDetailsState extends State<ShopDetails> {
                             width: 10,
                           ),
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
                             icon: Icon(
                               Icons.arrow_back,
                               size: 30,

@@ -79,16 +79,8 @@ class _CategoriesState extends State<Categories> {
                         SizedBox(
                           width: 10,
                         ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.arrow_back,
-                            size: 30,
-                            color: Colors.red,
-                          ),
-                        ),
                         Text(
-                          "All Categories",
+                          "  All Categories",
                           style: TextStyle(
                             fontSize: 18,
                             color: Colors.red,

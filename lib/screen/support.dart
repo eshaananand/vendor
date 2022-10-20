@@ -2,6 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
+
+import 'myAccount.dart';
 
 class Support extends StatelessWidget {
   const Support({Key? key}) : super(key: key);
@@ -47,7 +50,9 @@ class Support extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
                       icon: Icon(
                         Icons.arrow_back,
                         size: 20,
@@ -99,30 +104,36 @@ class Support extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(15.0),
+                    Container(
+                      width: 250,
+                      padding: EdgeInsets.only(top: 20),
+                      decoration: BoxDecoration(),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Icon(Icons.call, color: Colors.red),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "CONTACT NUMBER",
+                                    "  CONTACT NUMBER",
                                     style: TextStyle(
                                       fontSize: 20,
+                                      fontWeight: FontWeight.w300,
                                     ),
                                   ),
-                                  Text(
-                                    "+91 123456890",
-                                    style: TextStyle(
-                                      color: Colors.grey,
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 8.0),
+                                    child: Text(
+                                      "  +91 123456890",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                      ),
                                     ),
                                   )
                                 ],
@@ -132,12 +143,12 @@ class Support extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(top: 20.0),
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
                                       padding: EdgeInsets.only(right: 8.0),
@@ -145,31 +156,30 @@ class Support extends StatelessWidget {
                                           color: Colors.red),
                                     ),
                                     Text(
-                                      "YOUR MESSAGE",
+                                      "  YOUR MESSAGE",
                                       style: TextStyle(
                                         fontSize: 20,
+                                        fontWeight: FontWeight.w300,
                                       ),
                                     ),
                                   ],
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 100.0),
-                                  child: Container(
+                                  padding:
+                                      const EdgeInsets.only(left: 40, top: 8),
+                                  child: SizedBox(
                                     width: 200,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: TextFormField(
-                                        style: TextStyle(fontSize: 16.0),
-                                        decoration: InputDecoration(
-                                          contentPadding:
-                                              const EdgeInsets.symmetric(
-                                                  vertical: 14.0),
-                                          border: InputBorder.none,
-                                          hintText: "Enter your message here ",
-                                          fillColor: HexColor("D9D9D9")
-                                              .withOpacity(0.49),
-                                          filled: true,
-                                        ),
+                                    child: TextFormField(
+                                      style: TextStyle(fontSize: 16.0),
+                                      decoration: InputDecoration(
+                                        contentPadding:
+                                            const EdgeInsets.symmetric(
+                                                vertical: 14.0),
+                                        border: InputBorder.none,
+                                        hintText: "  Enter your message here ",
+                                        fillColor: HexColor("D9D9D9")
+                                            .withOpacity(0.46),
+                                        filled: true,
                                       ),
                                     ),
                                   ),
@@ -180,12 +190,15 @@ class Support extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset("assets/whastapp.png"),
-                        Text("CONTACT US USING WHATSAPP"),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset("assets/whastapp.png"),
+                          Text("  CONTACT US USING WHATSAPP"),
+                        ],
+                      ),
                     )
                   ],
                 ),

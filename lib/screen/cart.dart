@@ -210,7 +210,9 @@ class _CartState extends State<Cart> {
                 child: Row(
                   children: <Widget>[
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
                       icon: Icon(
                         Icons.arrow_back,
                         size: 20,

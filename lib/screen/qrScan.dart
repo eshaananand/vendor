@@ -164,71 +164,75 @@ class _QrScanState extends State<QrScan> {
 
     return SafeArea(
       child: Scaffold(
-        body: DefaultTabController(
-          length: 2,
-          child: Column(
-            children: [
-              SizedBox(
-                height: 50,
-              ),
-              Container(
-                height: h(0.058),
-                decoration: BoxDecoration(
-                  boxShadow: kElevationToShadow[4],
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(25),
+        body: SingleChildScrollView(
+          child: DefaultTabController(
+            length: 2,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 50,
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: 10,
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.arrow_back,
-                            size: 30,
-                            color: Colors.red,
+                Container(
+                  height: h(0.058),
+                  decoration: BoxDecoration(
+                    boxShadow: kElevationToShadow[4],
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 10,
                           ),
-                        ),
-                        Text(
-                          "Qr Scan",
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.red,
+                          IconButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            icon: Icon(
+                              Icons.arrow_back,
+                              size: 30,
+                              color: Colors.red,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
+                          Text(
+                            "Qr Scan",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.red,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              Container(
-                padding: const EdgeInsets.all(8.0),
-                width: w(0.8),
-                height: h(0.8),
-                child: ContainedTabBarView(
-                  tabBarProperties: TabBarProperties(
-                      labelColor: Colors.red,
-                      unselectedLabelColor: Colors.black,
-                      labelStyle: TextStyle(
-                        fontSize: 20,
-                      )),
-                  tabs: [
-                    Text('Scan'),
-                    Text('My Code'),
-                  ],
-                  views: [
-                    scan(),
-                    myCode(),
-                  ],
-                  // onChange: (index) => print(index),
+                Container(
+                  padding: const EdgeInsets.all(8.0),
+                  width: w(0.8),
+                  height: h(0.8),
+                  child: ContainedTabBarView(
+                    tabBarProperties: TabBarProperties(
+                        labelColor: Colors.red,
+                        unselectedLabelColor: Colors.black,
+                        labelStyle: TextStyle(
+                          fontSize: 20,
+                        )),
+                    tabs: [
+                      Text('Scan'),
+                      Text('My Code'),
+                    ],
+                    views: [
+                      scan(),
+                      myCode(),
+                    ],
+                    // onChange: (index) => print(index),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:vendor_app/screen/profile.dart';
 import 'package:vendor_app/screen/qrScan.dart';
@@ -8,6 +9,9 @@ import 'package:vendor_app/screen/refer_and_earn.dart';
 import 'package:vendor_app/screen/savedAddress.dart';
 import 'package:vendor_app/screen/support.dart';
 import 'package:vendor_app/screen/wallet.dart';
+
+import '../Persistent Nav Bar/persistentNavBar.dart';
+import 'my_earning.dart';
 
 class MyAccount extends StatelessWidget {
   const MyAccount({Key? key}) : super(key: key);
@@ -107,16 +111,10 @@ class MyAccount extends StatelessWidget {
                     children: [
                       SizedBox(
                         width: 10,
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.arrow_back,
-                          color: Colors.red,
-                        ),
+                        height: 50,
                       ),
                       Text(
-                        "My Account",
+                        "  My Account",
                         style: TextStyle(
                           fontSize: 18,
                           color: Colors.red,
@@ -223,7 +221,13 @@ class MyAccount extends StatelessWidget {
                   accountSettingsImage(
                     icon: "assets/cod.png",
                     name: "My Earnings",
-                    onTap: () {},
+                    onTap: () {
+                      pushNewScreen(
+                        context,
+                        screen: MyEarning(),
+                        withNavBar: false,
+                      );
+                    },
                   ),
                   accountSettingsIcon(
                     icon: Icons.logout_outlined,

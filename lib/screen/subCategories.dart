@@ -5,6 +5,8 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:vendor_app/screen/shopDetails.dart';
 
+import '../Persistent Nav Bar/persistentNavBar.dart';
+
 class SubCategories extends StatefulWidget {
   SubCategories({Key? key}) : super(key: key);
 
@@ -114,20 +116,13 @@ class _SubCategoriesState extends State<SubCategories> {
                     children: <Widget>[
                       Row(
                         // mainAxisAlignment: MainAxisAlignment.center,
+                        // ignore: prefer_const_literals_to_create_immutables
                         children: [
                           const SizedBox(
                             width: 10,
                           ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.arrow_back,
-                              size: 30,
-                              color: Colors.red,
-                            ),
-                          ),
                           const Text(
-                            "Vegetables and fruits",
+                            "  Vegetables and fruits",
                             style: TextStyle(
                               fontSize: 18,
                               color: Colors.red,

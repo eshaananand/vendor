@@ -54,7 +54,9 @@ class _WalletTransferState extends State<WalletTransfer> {
                           width: 10,
                         ),
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
                           icon: Icon(
                             Icons.arrow_back,
                             size: 30,

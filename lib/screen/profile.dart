@@ -51,9 +51,12 @@ class Profile extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Icon(
-                      Icons.arrow_back,
+                    child: IconButton(
+                      icon: Icon(Icons.arrow_back),
                       color: Colors.white,
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
                     ),
                   ),
                   Center(
@@ -129,7 +132,7 @@ class Profile extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(top: 35.0),
+                        padding: EdgeInsets.only(top: 35.0, bottom: 10),
                         child: Text(
                           "Account No.",
                           style: TextStyle(
@@ -147,7 +150,7 @@ class Profile extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(top: 35.0),
+                        padding: EdgeInsets.only(top: 35.0, bottom: 10),
                         child: Text(
                           "Re-enter Account no:",
                           style: TextStyle(
@@ -165,7 +168,7 @@ class Profile extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(top: 35.0),
+                        padding: EdgeInsets.only(top: 35.0, bottom: 10),
                         child: Text(
                           "IFSC Code:",
                           style: TextStyle(
@@ -183,7 +186,7 @@ class Profile extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 20.0),
+                        padding: const EdgeInsets.only(top: 20.0, bottom: 10),
                         child: SizedBox(
                           height: 40,
                           width: 100,

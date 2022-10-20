@@ -256,7 +256,7 @@ class _OrderPaymentState extends State<OrderPayment> {
                                                   EdgeInsets.only(top: 25.0),
                                               child: Center(
                                                 child: Text(
-                                                  "Rate Us",
+                                                  "Rate Us!",
                                                   style: TextStyle(
                                                     color: Colors.red,
                                                     fontWeight: FontWeight.bold,
@@ -275,12 +275,12 @@ class _OrderPaymentState extends State<OrderPayment> {
                                             ),
                                             RatingBar.builder(
                                               // tapOnlyMode: true,
-                                              initialRating: 0,
+                                              initialRating: stars[index],
                                               minRating: 0,
                                               direction: Axis.horizontal,
                                               itemCount: 5,
                                               itemPadding: EdgeInsets.symmetric(
-                                                  horizontal: 10.0),
+                                                  horizontal: 5.0),
                                               itemBuilder: (context, _) => Icon(
                                                 Icons.star,
                                                 color: Colors.red,
@@ -324,7 +324,7 @@ class _OrderPaymentState extends State<OrderPayment> {
                                                   ),
                                                 ),
                                               ),
-                                            )
+                                            ),
                                           ],
                                         ),
                                       ),

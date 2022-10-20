@@ -23,7 +23,7 @@ class _AuthState extends State<Auth> {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => Location()));
             },
-            child: SizedBox(
+            child: const SizedBox(
               height: kToolbarHeight,
               width: double.infinity,
               child: Center(
@@ -47,7 +47,7 @@ class _AuthState extends State<Auth> {
               crossAxisAlignment: CrossAxisAlignment.start,
               //mainAxisAlignment: MainAxisAlignment.spaceBe,
               children: <Widget>[
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 Container(
@@ -62,13 +62,13 @@ class _AuthState extends State<Auth> {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.arrow_back,
                           size: 20,
                           color: Colors.red,
                         ),
                       ),
-                      Text(
+                      const Text(
                         "Verification",
                         style: TextStyle(
                           fontSize: 18,
@@ -79,27 +79,24 @@ class _AuthState extends State<Auth> {
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 50,
-                ),
                 Padding(
                   padding: const EdgeInsets.all(25.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(
+                      const Text(
                         "First Name:",
                         style: TextStyle(color: Colors.red, fontSize: 15),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       TextFormField(
                         validator: (value) =>
                             value!.isEmpty ? 'Enter your first name' : null,
-                        style: TextStyle(color: Colors.black),
+                        style: const TextStyle(color: Colors.black),
                         decoration: InputDecoration(
-                            contentPadding: EdgeInsets.only(
+                            contentPadding: const EdgeInsets.only(
                                 left: 15, bottom: 11, top: 11, right: 15),
                             hintText: "Enter your first name",
                             focusedBorder: OutlineInputBorder(
@@ -108,26 +105,26 @@ class _AuthState extends State<Auth> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black),
+                              borderSide: const BorderSide(color: Colors.black),
                               borderRadius: BorderRadius.circular(25.0),
                             )),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
-                      Text(
+                      const Text(
                         "Last Name:",
                         style: TextStyle(color: Colors.red, fontSize: 15),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       TextFormField(
                         validator: (value) =>
                             value!.isEmpty ? 'Enter your last name' : null,
-                        style: TextStyle(color: Colors.black),
+                        style: const TextStyle(color: Colors.black),
                         decoration: InputDecoration(
-                            contentPadding: EdgeInsets.only(
+                            contentPadding: const EdgeInsets.only(
                                 left: 15, bottom: 11, top: 11, right: 15),
                             hintText: "Enter your last name",
                             focusedBorder: OutlineInputBorder(
@@ -136,26 +133,26 @@ class _AuthState extends State<Auth> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black),
+                              borderSide: const BorderSide(color: Colors.black),
                               borderRadius: BorderRadius.circular(25.0),
                             )),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
-                      Text(
+                      const Text(
                         "E-mail:",
                         style: TextStyle(color: Colors.red, fontSize: 15),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       TextFormField(
                         validator: (value) =>
                             value!.isEmpty ? 'Enter your email' : null,
-                        style: TextStyle(color: Colors.black),
+                        style: const TextStyle(color: Colors.black),
                         decoration: InputDecoration(
-                            contentPadding: EdgeInsets.only(
+                            contentPadding: const EdgeInsets.only(
                                 left: 15, bottom: 11, top: 11, right: 15),
                             hintText: "Enter your email",
                             focusedBorder: OutlineInputBorder(
@@ -164,7 +161,7 @@ class _AuthState extends State<Auth> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black),
+                              borderSide: const BorderSide(color: Colors.black),
                               borderRadius: BorderRadius.circular(25.0),
                             )),
                       ),
