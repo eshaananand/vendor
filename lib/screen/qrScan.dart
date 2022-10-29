@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'package:flutter/material.dart';
 
@@ -36,10 +34,10 @@ class _QrScanState extends State<QrScan> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: Center(child: Text("Camera here"))),
+                  child: const Center(child: Text("Camera here"))),
             ),
             Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20.0),
               child: SizedBox(
                 height: 40,
                 width: 150,
@@ -51,7 +49,7 @@ class _QrScanState extends State<QrScan> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "Scan",
                         style: TextStyle(
@@ -85,7 +83,7 @@ class _QrScanState extends State<QrScan> {
                 ),
                 child: Column(
                   children: [
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.only(top: 20.0, bottom: 20),
                       child: Text(
                         "Swayam Verma",
@@ -96,7 +94,9 @@ class _QrScanState extends State<QrScan> {
                     Container(
                       height: 150,
                       child: Center(
-                        child: Text("Qr code here"),
+                        child: Image.asset(
+                          "assets/qr1.png",
+                        ),
                       ),
                     ),
                   ],
@@ -104,7 +104,7 @@ class _QrScanState extends State<QrScan> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20.0),
               child: SizedBox(
                 height: 40,
                 width: 150,
@@ -118,7 +118,7 @@ class _QrScanState extends State<QrScan> {
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
+                      children: const [
                         Icon(Icons.share, color: Colors.white),
                         Text(
                           "Share My Code",
@@ -140,12 +140,12 @@ class _QrScanState extends State<QrScan> {
                   elevation: 5,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
-                      side: BorderSide(
+                      side: const BorderSide(
                         color: Colors.black,
                       )),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
+                    children: const [
                       Icon(Icons.download, color: Colors.black),
                       Text(
                         "Save to gallery",
@@ -169,7 +169,7 @@ class _QrScanState extends State<QrScan> {
             length: 2,
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 Container(
@@ -184,20 +184,20 @@ class _QrScanState extends State<QrScan> {
                     children: <Widget>[
                       Row(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           IconButton(
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.arrow_back,
                               size: 30,
                               color: Colors.red,
                             ),
                           ),
-                          Text(
+                          const Text(
                             "Qr Scan",
                             style: TextStyle(
                               fontSize: 18,
@@ -214,13 +214,13 @@ class _QrScanState extends State<QrScan> {
                   width: w(0.8),
                   height: h(0.8),
                   child: ContainedTabBarView(
-                    tabBarProperties: TabBarProperties(
+                    tabBarProperties: const TabBarProperties(
                         labelColor: Colors.red,
                         unselectedLabelColor: Colors.black,
                         labelStyle: TextStyle(
                           fontSize: 20,
                         )),
-                    tabs: [
+                    tabs: const [
                       Text('Scan'),
                       Text('My Code'),
                     ],

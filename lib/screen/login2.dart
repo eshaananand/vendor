@@ -128,7 +128,7 @@ class LoginPage2 extends StatelessWidget {
                         height: 60,
                         minWidth: 150,
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder:( context) => Otp()));
+                          Navigator.push(context, MaterialPageRoute(builder:( context) => Otp(number: "",)));
                         },
                         color: Colors.red,
                         elevation: 5,
