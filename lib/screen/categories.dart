@@ -3,6 +3,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
+import 'package:vendor_app/screen/qrScan.dart';
+
+import 'orderHistory.dart';
 
 class Categories extends StatefulWidget {
   Categories({Key? key}) : super(key: key);
@@ -60,9 +64,6 @@ class _CategoriesState extends State<Categories> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(
-                height: h(0.061),
-              ),
               Container(
                 //
                 height: h(0.058),
@@ -92,12 +93,24 @@ class _CategoriesState extends State<Categories> {
                       children: [
                         IconButton(
                           icon: Icon(Icons.qr_code, color: Colors.red),
-                          onPressed: () {},
+                          onPressed: () {
+                            pushNewScreen(
+                              context,
+                              screen: QrScan(),
+                              withNavBar: false,
+                            );
+                          },
                         ),
                         IconButton(
                           icon: Icon(Icons.shopping_cart_outlined,
                               color: Colors.red),
-                          onPressed: () {},
+                          onPressed: () {
+                            pushNewScreen(
+                              context,
+                              screen: OrderPayment(),
+                              withNavBar: false,
+                            );
+                          },
                         ),
                       ],
                     ),
@@ -108,253 +121,263 @@ class _CategoriesState extends State<Categories> {
                 child: Row(
                   children: [
                     Container(
-                      // height: h(0.77),
                       width: w(0.35),
                       color: HexColor("D9D9D9"),
                       child: SingleChildScrollView(
-                        child: ListView(
-                          physics: NeverScrollableScrollPhysics(),
-                          shrinkWrap: true,
-                          padding: const EdgeInsets.only(top: 10.0, bottom: 20),
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 5),
-                              child: InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    if (index == 0)
-                                      index = -1;
-                                    else
-                                      index = 0;
-                                  });
-                                },
-                                child: Card(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  elevation: 5,
-                                  child: Container(
-                                    // padding: EdgeInsets.only(top: 4),
-                                    height: 100,
-                                    // width: 50,
-                                    decoration: BoxDecoration(
-                                      color: index == 0
-                                          ? HexColor("FD2E2E").withOpacity(0.45)
-                                          : Colors.white,
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            minHeight: h(0.9),
+                          ),
+                          child: ListView(
+                            physics: NeverScrollableScrollPhysics(),
+                            shrinkWrap: true,
+                            padding:
+                                const EdgeInsets.only(top: 10.0, bottom: 20),
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 5),
+                                child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      if (index == 0)
+                                        index = -1;
+                                      else
+                                        index = 0;
+                                    });
+                                  },
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10),
                                     ),
-                                    child: Column(
-                                      children: [
-                                        Image.asset(
-                                          "assets/vegetable.png",
-                                        ),
-                                        // Text("Vegetables And Fruits"),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              top: 10.0, left: 10, right: 10),
-                                          child: AutoSizeText(
-                                            "Vegetables & Fruits",
-                                            minFontSize: 1,
-                                            maxLines: 1,
+                                    elevation: 5,
+                                    child: Container(
+                                      // padding: EdgeInsets.only(top: 4),
+                                      height: 100,
+                                      // width: 50,
+                                      decoration: BoxDecoration(
+                                        color: index == 0
+                                            ? HexColor("FD2E2E")
+                                                .withOpacity(0.45)
+                                            : Colors.white,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Image.asset(
+                                            "assets/vegetable.png",
                                           ),
-                                        ),
-                                      ],
+                                          // Text("Vegetables And Fruits"),
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                                top: 10.0, left: 10, right: 10),
+                                            child: AutoSizeText(
+                                              "Vegetables & Fruits",
+                                              minFontSize: 1,
+                                              maxLines: 1,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 5, vertical: 5),
-                              child: InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    if (index == 1)
-                                      index = -1;
-                                    else
-                                      index = 1;
-                                  });
-                                },
-                                child: Card(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  elevation: 5,
-                                  child: Container(
-                                    height: 100,
-                                    decoration: BoxDecoration(
-                                      // color: Colors.white,
-                                      color: index == 1
-                                          ? HexColor("FD2E2E").withOpacity(0.45)
-                                          : Colors.white,
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 5, vertical: 5),
+                                child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      if (index == 1)
+                                        index = -1;
+                                      else
+                                        index = 1;
+                                    });
+                                  },
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10),
                                     ),
-                                    child: Column(
-                                      children: [
-                                        Image.asset(
-                                          "assets/vegetable.png",
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              top: 10.0, left: 10, right: 10),
-                                          child: AutoSizeText(
-                                            "Vegetables & Fruits",
-                                            minFontSize: 1,
-                                            maxLines: 1,
+                                    elevation: 5,
+                                    child: Container(
+                                      height: 100,
+                                      decoration: BoxDecoration(
+                                        // color: Colors.white,
+                                        color: index == 1
+                                            ? HexColor("FD2E2E")
+                                                .withOpacity(0.45)
+                                            : Colors.white,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Image.asset(
+                                            "assets/vegetable.png",
                                           ),
-                                        ),
-                                      ],
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                                top: 10.0, left: 10, right: 10),
+                                            child: AutoSizeText(
+                                              "Vegetables & Fruits",
+                                              minFontSize: 1,
+                                              maxLines: 1,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 5, vertical: 2.5),
-                              child: InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    if (index == 2)
-                                      index = -1;
-                                    else
-                                      index = 2;
-                                  });
-                                },
-                                child: Card(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  elevation: 5,
-                                  child: Container(
-                                    height: 100,
-                                    decoration: BoxDecoration(
-                                      // color: Colors.white,
-                                      color: index == 2
-                                          ? HexColor("FD2E2E").withOpacity(0.45)
-                                          : Colors.white,
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 5, vertical: 2.5),
+                                child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      if (index == 2)
+                                        index = -1;
+                                      else
+                                        index = 2;
+                                    });
+                                  },
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10),
                                     ),
-                                    child: Column(
-                                      children: [
-                                        Image.asset(
-                                          "assets/vegetable.png",
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              top: 10.0, left: 10, right: 10),
-                                          child: AutoSizeText(
-                                            "Vegetables",
-                                            minFontSize: 1,
-                                            maxLines: 1,
+                                    elevation: 5,
+                                    child: Container(
+                                      height: 100,
+                                      decoration: BoxDecoration(
+                                        // color: Colors.white,
+                                        color: index == 2
+                                            ? HexColor("FD2E2E")
+                                                .withOpacity(0.45)
+                                            : Colors.white,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Image.asset(
+                                            "assets/vegetable.png",
                                           ),
-                                        ),
-                                      ],
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                                top: 10.0, left: 10, right: 10),
+                                            child: AutoSizeText(
+                                              "Vegetables",
+                                              minFontSize: 1,
+                                              maxLines: 1,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 5, vertical: 2.5),
-                              child: InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    if (index == 3)
-                                      index = -1;
-                                    else
-                                      index = 3;
-                                  });
-                                },
-                                child: Card(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  elevation: 5,
-                                  child: Container(
-                                    height: 100,
-                                    decoration: BoxDecoration(
-                                      // color: Colors.white,
-                                      color: index == 3
-                                          ? HexColor("FD2E2E").withOpacity(0.45)
-                                          : Colors.white,
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 5, vertical: 2.5),
+                                child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      if (index == 3)
+                                        index = -1;
+                                      else
+                                        index = 3;
+                                    });
+                                  },
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10),
                                     ),
-                                    child: Column(
-                                      children: [
-                                        Image.asset(
-                                          "assets/vegetable.png",
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              top: 10.0, left: 10, right: 10),
-                                          child: AutoSizeText(
-                                            "Vegetables & Fruits",
-                                            minFontSize: 1,
-                                            maxLines: 1,
+                                    elevation: 5,
+                                    child: Container(
+                                      height: 100,
+                                      decoration: BoxDecoration(
+                                        // color: Colors.white,
+                                        color: index == 3
+                                            ? HexColor("FD2E2E")
+                                                .withOpacity(0.45)
+                                            : Colors.white,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Image.asset(
+                                            "assets/vegetable.png",
                                           ),
-                                        ),
-                                      ],
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                                top: 10.0, left: 10, right: 10),
+                                            child: AutoSizeText(
+                                              "Vegetables & Fruits",
+                                              minFontSize: 1,
+                                              maxLines: 1,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 5, vertical: 2.5),
-                              child: InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    if (index == 4)
-                                      index = -1;
-                                    else
-                                      index = 4;
-                                  });
-                                },
-                                child: Card(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  elevation: 5,
-                                  child: Container(
-                                    height: 100,
-                                    decoration: BoxDecoration(
-                                      // color: Colors.white,
-                                      color: index == 4
-                                          ? HexColor("FD2E2E").withOpacity(0.45)
-                                          : Colors.white,
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 5, vertical: 2.5),
+                                child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      if (index == 4)
+                                        index = -1;
+                                      else
+                                        index = 4;
+                                    });
+                                  },
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10),
                                     ),
-                                    child: Column(
-                                      children: [
-                                        Image.asset(
-                                          "assets/vegetable.png",
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              top: 10.0, left: 10, right: 10),
-                                          child: AutoSizeText(
-                                            "Vegetables & Fruits",
-                                            minFontSize: 1,
-                                            maxLines: 1,
+                                    elevation: 5,
+                                    child: Container(
+                                      height: 100,
+                                      decoration: BoxDecoration(
+                                        // color: Colors.white,
+                                        color: index == 4
+                                            ? HexColor("FD2E2E")
+                                                .withOpacity(0.45)
+                                            : Colors.white,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Image.asset(
+                                            "assets/vegetable.png",
                                           ),
-                                        ),
-                                      ],
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                                top: 10.0, left: 10, right: 10),
+                                            child: AutoSizeText(
+                                              "Vegetables & Fruits",
+                                              minFontSize: 1,
+                                              maxLines: 1,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
                     Container(
-                      height: h(0.77),
                       width: w(0.65),
+                      height: h(0.9),
                       child: ListView(
                         physics: NeverScrollableScrollPhysics(),
                         shrinkWrap: true,

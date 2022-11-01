@@ -26,9 +26,6 @@ class _ChatBoxState extends State<ChatBox> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 50,
-              ),
               Container(
                 height: h(0.058),
                 decoration: BoxDecoration(

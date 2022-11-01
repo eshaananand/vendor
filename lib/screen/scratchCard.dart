@@ -19,9 +19,6 @@ class ScratchCard extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: [
-            SizedBox(
-              height: 50,
-            ),
             Container(
               height: h(0.058),
               decoration: BoxDecoration(

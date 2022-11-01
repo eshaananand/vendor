@@ -220,9 +220,6 @@ class _ShopDetailsState extends State<ShopDetails> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 50,
-                ),
                 Container(
                   //
                   decoration: BoxDecoration(

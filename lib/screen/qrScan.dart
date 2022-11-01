@@ -169,9 +169,6 @@ class _QrScanState extends State<QrScan> {
             length: 2,
             child: Column(
               children: [
-                SizedBox(
-                  height: 50,
-                ),
                 Container(
                   height: h(0.058),
                   decoration: BoxDecoration(

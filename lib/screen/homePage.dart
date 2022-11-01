@@ -7,6 +7,8 @@ import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:vendor_app/screen/subCategories.dart';
 import 'package:vendor_app/screen/shopDetails.dart';
 
+import 'categories.dart';
+
 class homepage extends StatefulWidget {
   homepage({Key? key}) : super(key: key);
 
@@ -90,9 +92,6 @@ class _homepageState extends State<homepage> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 50,
-                ),
                 Container(
                   //
                   decoration: BoxDecoration(
@@ -519,21 +518,51 @@ class _homepageState extends State<homepage> {
                       ),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10),
-                        child: TextFormField(
-                          controller: searchController,
-                          style: TextStyle(fontSize: 16.0),
-                          decoration: InputDecoration(
-                              contentPadding:
-                                  const EdgeInsets.symmetric(vertical: 14.0),
-                              border: InputBorder.none,
-                              hintText: "See all categories",
-                              fillColor: HexColor("D9D9D9"),
-                              filled: true,
-                              // prefixIcon: IconButton(
-                              //   icon: Icon(Icons.calendar_view_month),
-                              //   onPressed: () {},
-                              // ),
-                              prefixIcon: Icon(Icons.calendar_view_month)),
+                        // child: TextFormField(
+                        //   controller: searchController,
+                        //   style: TextStyle(fontSize: 16.0),
+                        //   decoration: InputDecoration(
+                        //     contentPadding:
+                        //         const EdgeInsets.symmetric(vertical: 14.0),
+                        //     border: InputBorder.none,
+                        //     hintText: "See all categories",
+                        //     fillColor: HexColor("D9D9D9"),
+                        //     filled: true,
+                        //     // prefixIcon: IconButton(
+                        //     //   icon: Icon(Icons.calendar_view_month),
+                        //     //   onPressed: () {},
+                        //     // ),
+                        //     prefixIcon: Icon(Icons.calendar_view_month),
+                        //   ),
+                        // ),
+                        child: InkWell(
+                          onTap: () {
+                            pushNewScreen(context, screen: Categories(),withNavBar: false);
+                          },
+                          child: Container(
+                              width: w(1),
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: HexColor("D9D9D9"),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Icon(Icons.calendar_view_month,
+                                      color: HexColor("8A8989")),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text("  See all categories",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: HexColor("8A8989"),
+                                        )),
+                                  )
+                                ],
+                              )),
                         ),
                       ),
                       Padding(

@@ -158,9 +158,6 @@ class TrackLocation extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 50,
-              ),
               Container(
                 height: h(0.058),
                 decoration: BoxDecoration(

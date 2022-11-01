@@ -101,9 +101,6 @@ class _SubCategoriesState extends State<SubCategories> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(
-                  height: 50,
-                ),
                 Container(
                   //
                   decoration: BoxDecoration(

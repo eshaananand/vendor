@@ -68,11 +68,14 @@ class LoginPage1 extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 40),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      //crossAxisAlignment: ,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         const Text(
                           "Phone No.:",
                           style: TextStyle(color: Colors.red, fontSize: 15),
+                        ),
+                        SizedBox(
+                          height: 10,
                         ),
                         TextFormField(
                           validator: (value) =>

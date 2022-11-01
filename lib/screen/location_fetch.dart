@@ -74,9 +74,6 @@ class _Location_fetchState extends State<Location_fetch> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 50,
-                ),
                 Container(
                   decoration: BoxDecoration(
                     boxShadow: kElevationToShadow[4],

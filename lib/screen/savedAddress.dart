@@ -77,9 +77,6 @@ class _SavedAddressState extends State<SavedAddress> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      height: 50,
-                    ),
                     Container(
                       decoration: BoxDecoration(
                         boxShadow: kElevationToShadow[4],
@@ -99,7 +96,7 @@ class _SavedAddressState extends State<SavedAddress> {
                             ),
                           ),
                           Text(
-                            "Apply Coupons",
+                            "Saved Address",
                             style: TextStyle(
                               fontSize: 18,
                               color: Colors.red,
