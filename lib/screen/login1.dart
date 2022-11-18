@@ -20,7 +20,7 @@ class _LoginPage1State extends State<LoginPage1> {
     print("login $number");
     try {
       Response response = await post(
-        Uri.parse('http://localhost:3001/v/sendOTP'),
+        Uri.parse('https://allinonevendor.herokuapp.com/v/sendOTP'),
         body: {'number': number},
       );
 
@@ -153,7 +153,7 @@ class _LoginPage1State extends State<LoginPage1> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    const LoginPage2())),
+                                                    LoginPage2())),
                                     ),
                                     const TextSpan(
                                       text: ' Code ? ',

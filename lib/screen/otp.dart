@@ -13,7 +13,7 @@ class Otp extends StatelessWidget {
   void verify(String otp, number) async {
     try {
       Response response = await post(
-        Uri.parse('http://localhost:3001/v/verifyOTP'),
+        Uri.parse('https://allinonevendor.herokuapp.com/v/verifyOTPP'),
         body: {
           'number': number,
           'otp': otp,
