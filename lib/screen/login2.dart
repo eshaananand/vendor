@@ -1,9 +1,29 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vendor_app/screen/otp.dart';
+import 'package:http/http.dart';
 
 class LoginPage2 extends StatelessWidget {
-  const LoginPage2({Key? key}) : super(key: key);
+  LoginPage2({Key? key}) : super(key: key);
+  TextEditingController referralCode = TextEditingController();
+  TextEditingController numberController = TextEditingController();
+
+  void login(String number) async {
+    try {
+      Response response = await post(
+        Uri.parse('https://allinonevendor.herokuapp.com/v/sendOTP'),
+        body: {'number': number},
+      );
+
+      if (response.statusCode == 200) {
+        print("OTP Sent successfully");
+      } else {
+        print("Login failed");
+      }
+    } catch (e) {
+      print(e.toString());
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,10 +74,7 @@ class LoginPage2 extends StatelessWidget {
                               color: Colors.blue,
                               size: 50,
                             ),
-                            Icon(
-                              Icons.g_mobiledata,
-                              size: 50,
-                            ),
+                            Image.asset("assets/google.png"),
                           ],
                         )
                       ],
@@ -66,6 +83,7 @@ class LoginPage2 extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 40),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       // TODO: mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
                         Text(
@@ -128,7 +146,13 @@ class LoginPage2 extends StatelessWidget {
                         height: 60,
                         minWidth: 150,
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder:( context) => Otp()));
+                          login(numberController.text.toString());
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Otp(
+                                      number:
+                                          numberController.text.toString())));
                         },
                         color: Colors.red,
                         elevation: 5,
@@ -147,7 +171,7 @@ class LoginPage2 extends StatelessWidget {
                     ),
                   ),
                   Container(
-                   // padding: EdgeInsets.only(top: 50),
+                    // padding: EdgeInsets.only(top: 50),
                     height: 300,
                     decoration: BoxDecoration(
                         image: DecorationImage(

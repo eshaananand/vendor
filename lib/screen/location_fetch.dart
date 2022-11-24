@@ -3,7 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:vendor_app/screen/auth.dart';
 import 'package:vendor_app/screen/homePage.dart';
+import 'package:vendor_app/screen/location.dart';
 
 import '../Persistent Nav Bar/persistentNavBar.dart';
 
@@ -83,7 +85,13 @@ class _Location_fetchState extends State<Location_fetch> {
                   child: Row(
                     children: <Widget>[
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          print("Hello");
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Location()));
+                        },
                         icon: Icon(
                           Icons.arrow_back,
                           size: 20,

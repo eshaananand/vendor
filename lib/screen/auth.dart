@@ -162,6 +162,65 @@ class _AuthState extends State<Auth> {
                               borderRadius: BorderRadius.circular(25.0),
                             )),
                       ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const Text(
+                        "Address:",
+                        style: TextStyle(color: Colors.red, fontSize: 15),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      TextFormField(
+                        validator: (value) =>
+                            value!.isEmpty ? 'Enter your address' : null,
+                        style: const TextStyle(color: Colors.black),
+                        decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.only(
+                                left: 15, bottom: 11, top: 11, right: 15),
+                            hintText: "Enter your address",
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Colors.black, width: 2.0),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.black),
+                              borderRadius: BorderRadius.circular(25.0),
+                            )),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const Text(
+                        "Phone Number:",
+                        style: TextStyle(color: Colors.red, fontSize: 15),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      TextFormField(
+                        validator: (value) =>
+                            value!.isEmpty ? 'Enter your phone number' : null,
+                        style: const TextStyle(color: Colors.black),
+                        decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.only(
+                                left: 15, bottom: 11, top: 11, right: 15),
+                            hintText: "Enter your phone number",
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Colors.black, width: 2.0),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.black),
+                              borderRadius: BorderRadius.circular(25.0),
+                            )),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
                     ],
                   ),
                 ),

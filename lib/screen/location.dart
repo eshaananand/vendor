@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:vendor_app/screen/auth.dart';
 import 'package:vendor_app/screen/location_fetch.dart';
 
 class Location extends StatefulWidget {
@@ -75,7 +76,10 @@ class _LocationState extends State<Location> {
               child: Row(
                 children: <Widget>[
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Auth()));
+                    },
                     icon: Icon(
                       Icons.arrow_back,
                       size: 20,
