@@ -21,6 +21,9 @@ class OrderPlaced extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: [
+            SizedBox(
+              height: 20,
+            ),
             Container(
               height: h(0.058),
               decoration: BoxDecoration(

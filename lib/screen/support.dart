@@ -38,6 +38,9 @@ class Support extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 20,
+              ),
               Container(
                 decoration: BoxDecoration(
                   boxShadow: kElevationToShadow[4],
@@ -52,7 +55,7 @@ class Support extends StatelessWidget {
                       },
                       icon: Icon(
                         Icons.arrow_back,
-                        size: 20,
+                        size: 30,
                         color: Colors.red,
                       ),
                     ),

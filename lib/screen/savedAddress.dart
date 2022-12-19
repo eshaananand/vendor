@@ -2,6 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
+
+import 'add_new_address.dart';
 
 class SavedAddress extends StatefulWidget {
   SavedAddress({Key? key}) : super(key: key);
@@ -77,6 +80,9 @@ class _SavedAddressState extends State<SavedAddress> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(
+                      height: 20,
+                    ),
                     Container(
                       decoration: BoxDecoration(
                         boxShadow: kElevationToShadow[4],
@@ -91,7 +97,7 @@ class _SavedAddressState extends State<SavedAddress> {
                             },
                             icon: Icon(
                               Icons.arrow_back,
-                              size: 20,
+                              size: 30,
                               color: Colors.red,
                             ),
                           ),
@@ -134,7 +140,13 @@ class _SavedAddressState extends State<SavedAddress> {
                         height: 40,
                         width: 90,
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            pushNewScreen(
+                              context,
+                              screen: AddNewAddress(),
+                              withNavBar: false,
+                            );
+                          },
                           child: Card(
                             elevation: 5,
                             shape: RoundedRectangleBorder(

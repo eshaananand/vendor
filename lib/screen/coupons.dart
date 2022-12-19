@@ -78,6 +78,9 @@ class Coupons extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      SizedBox(
+                        height: 20,
+                      ),
                       Container(
                         decoration: BoxDecoration(
                           boxShadow: kElevationToShadow[4],

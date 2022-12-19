@@ -73,7 +73,7 @@ class Otp extends StatelessWidget {
               //mainAxisAlignment: MainAxisAlignment.spaceBe,
               children: <Widget>[
                 const SizedBox(
-                  height: 50,
+                  height: 20,
                 ),
                 Container(
                   decoration: BoxDecoration(

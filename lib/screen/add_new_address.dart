@@ -9,14 +9,14 @@ import 'package:vendor_app/screen/location.dart';
 
 import '../Persistent Nav Bar/persistentNavBar.dart';
 
-class Location_fetch extends StatefulWidget {
-  const Location_fetch({Key? key}) : super(key: key);
+class AddNewAddress extends StatefulWidget {
+  const AddNewAddress({Key? key}) : super(key: key);
 
   @override
-  State<Location_fetch> createState() => _Location_fetchState();
+  State<AddNewAddress> createState() => _AddNewAddressState();
 }
 
-class _Location_fetchState extends State<Location_fetch> {
+class _AddNewAddressState extends State<AddNewAddress> {
   int selected = 0;
   @override
   Widget build(BuildContext context) {
@@ -50,18 +50,13 @@ class _Location_fetchState extends State<Location_fetch> {
             bottomNavigationBar: Material(
               color: Colors.red,
               child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => PersistentNavBar()));
-                },
+                onTap: () {},
                 child: SizedBox(
                   height: kToolbarHeight,
                   width: double.infinity,
                   child: Center(
                     child: Text(
-                      'Continue',
+                      'Save',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,

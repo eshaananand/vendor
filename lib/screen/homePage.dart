@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
+import 'package:vendor_app/screen/qrScan.dart';
 import 'package:vendor_app/screen/subCategories.dart';
 import 'package:vendor_app/screen/shopDetails.dart';
 
 import 'categories.dart';
+import 'orderHistory.dart';
 
 class homepage extends StatefulWidget {
   homepage({Key? key}) : super(key: key);
@@ -92,6 +94,9 @@ class _homepageState extends State<homepage> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(
+                  height: 20,
+                ),
                 Container(
                   //
                   decoration: BoxDecoration(
@@ -137,12 +142,24 @@ class _homepageState extends State<homepage> {
                         children: [
                           IconButton(
                             icon: Icon(Icons.qr_code, color: Colors.red),
-                            onPressed: () {},
+                            onPressed: () {
+                              pushNewScreen(
+                                context,
+                                screen: QrScan(),
+                                withNavBar: false,
+                              );
+                            },
                           ),
                           IconButton(
                             icon: Icon(Icons.shopping_cart_outlined,
                                 color: Colors.red),
-                            onPressed: () {},
+                            onPressed: () {
+                              pushNewScreen(
+                                context,
+                                screen: OrderPayment(),
+                                withNavBar: false,
+                              );
+                            },
                           ),
                         ],
                       ),
@@ -537,7 +554,8 @@ class _homepageState extends State<homepage> {
                         // ),
                         child: InkWell(
                           onTap: () {
-                            pushNewScreen(context, screen: Categories(),withNavBar: false);
+                            pushNewScreen(context,
+                                screen: Categories(), withNavBar: false);
                           },
                           child: Container(
                               width: w(1),
@@ -569,7 +587,7 @@ class _homepageState extends State<homepage> {
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(
                           "TODAY’S TRENDING SHOP ",
-                          style: TextStyle(color: Colors.red),
+                          style: TextStyle(color: Colors.red, fontSize: 17),
                         ),
                       ),
                       ListView(

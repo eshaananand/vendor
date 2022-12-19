@@ -35,6 +35,9 @@ class _WalletTransferState extends State<WalletTransfer> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 20,
+              ),
               Container(
                 height: h(0.058),
                 decoration: BoxDecoration(
@@ -101,23 +104,41 @@ class _WalletTransferState extends State<WalletTransfer> {
                     //   ),
                     // ),
                     Container(
-                      width: w(0.3),
-                      child: TextFormField(
-                        style: TextStyle(
-                          fontSize: 30,
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: "Rs 500",
-                          hintStyle: TextStyle(
-                            fontSize: 30,
-                            color: Colors.red,
-                            fontWeight: FontWeight.bold,
+                      // decoration: BoxDecoration(border: Border.all()),
+                      width: w(0.8),
+                      // height: 100,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Rs.",
+                              style: TextStyle(
+                                  fontSize: 30,
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold)),
+                          Container(
+                            // decoration: BoxDecoration(
+                            //   border: Bor
+                            // ),
+                            width: 60,
+                            child: TextFormField(
+                              style: TextStyle(
+                                fontSize: 30,
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              keyboardType: TextInputType.number,
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: "500",
+                                hintStyle: TextStyle(
+                                  fontSize: 30,
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
                     ),
                     InkWell(

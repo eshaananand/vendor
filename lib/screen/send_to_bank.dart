@@ -30,6 +30,9 @@ class _SendBankState extends State<SendBank> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 20,
+              ),
               Container(
                 height: h(0.058),
                 decoration: BoxDecoration(
@@ -93,25 +96,36 @@ class _SendBankState extends State<SendBank> {
                     //         fontWeight: FontWeight.bold),
                     //   ),
                     // ),
-                    Container(
-                      width: w(0.3),
-                      child: TextFormField(
-                        style: TextStyle(
-                          fontSize: 30,
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: "Rs 500",
-                          hintStyle: TextStyle(
-                            fontSize: 30,
-                            color: Colors.red,
-                            fontWeight: FontWeight.bold,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Rs.",
+                            style: TextStyle(
+                                fontSize: 30,
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold)),
+                        Container(
+                          width: w(0.25),
+                          child: TextFormField(
+                            
+                            style: TextStyle(
+                              fontSize: 30,
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "500",
+                              hintStyle: TextStyle(
+                                fontSize: 30,
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                      ],
                     ),
                     InkWell(
                       onTap: () {

@@ -30,6 +30,9 @@ class _AddMoneyState extends State<AddMoney> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 20,
+              ),
               Container(
                 height: h(0.058),
                 decoration: BoxDecoration(
@@ -43,7 +46,7 @@ class _AddMoneyState extends State<AddMoney> {
                     Row(
                       children: [
                         SizedBox(
-                          width: 10,
+                          height: 20,
                         ),
                         IconButton(
                           onPressed: () {

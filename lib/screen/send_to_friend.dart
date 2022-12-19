@@ -35,6 +35,9 @@ class _SendFriendsState extends State<SendFriends> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            SizedBox(
+              height: 20,
+            ),
             Container(
               height: h(0.058),
               decoration: BoxDecoration(

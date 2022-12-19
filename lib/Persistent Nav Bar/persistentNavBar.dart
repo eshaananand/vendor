@@ -30,6 +30,7 @@ class PersistentNavBar extends StatelessWidget {
         PersistentBottomNavBarItem(
           icon: Icon(CupertinoIcons.home),
           title: ("Home"),
+          textStyle: TextStyle(fontSize: 18),
           activeColorPrimary: Colors.red,
           activeColorSecondary: Colors.white,
           inactiveColorPrimary: Colors.white,
@@ -37,6 +38,7 @@ class PersistentNavBar extends StatelessWidget {
         PersistentBottomNavBarItem(
           icon: Icon(CupertinoIcons.square_grid_2x2),
           title: ("Categories"),
+          textStyle: TextStyle(fontSize: 18),
           activeColorPrimary: Colors.red,
           activeColorSecondary: Colors.white,
           inactiveColorPrimary: Colors.white,
@@ -44,6 +46,7 @@ class PersistentNavBar extends StatelessWidget {
         PersistentBottomNavBarItem(
           icon: Icon(Icons.shopping_bag_outlined),
           title: ("Order"),
+          textStyle: TextStyle(fontSize: 18),
           activeColorPrimary: Colors.red,
           activeColorSecondary: Colors.white,
           inactiveColorPrimary: Colors.white,
@@ -51,6 +54,7 @@ class PersistentNavBar extends StatelessWidget {
         PersistentBottomNavBarItem(
           icon: Icon(Icons.person_outlined),
           title: ("Profile"),
+          textStyle: TextStyle(fontSize: 18),
           activeColorPrimary: Colors.red,
           activeColorSecondary: Colors.white,
           inactiveColorPrimary: Colors.white,

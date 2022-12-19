@@ -64,6 +64,9 @@ class _CategoriesState extends State<Categories> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 20,
+              ),
               Container(
                 //
                 height: h(0.058),
@@ -163,9 +166,10 @@ class _CategoriesState extends State<Categories> {
                                       ),
                                       child: Column(
                                         children: [
-                                          Image.asset(
-                                            "assets/vegetable.png",
-                                          ),
+                                          // Image.asset(
+                                          //   "assets/vegetable.png",
+                                          // ),
+                                          Icon(Icons.pedal_bike),
                                           // Text("Vegetables And Fruits"),
                                           Padding(
                                             padding: EdgeInsets.only(
