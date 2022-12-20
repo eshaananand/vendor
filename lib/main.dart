@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vendor_app/screen/add_money.dart';
+import 'package:vendor_app/screen/adminVerify.dart';
 import 'package:vendor_app/screen/chatBox.dart';
 import 'package:vendor_app/screen/itemsOfShop.dart';
 
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
       ),
       home: LoginPage1(),
-      // home: Support(),
+      // home: AdminVerify(),
     );
   }
 }
